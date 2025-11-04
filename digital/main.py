@@ -6,128 +6,110 @@ import base64
 # Set the page configuration
 st.set_page_config(page_title='My Website', layout='wide')
 
-# Sidebar navigation with emojis
+# Sidebar navigation
 page = st.sidebar.radio('Navigation',
-                        ['🏠 Introduction', '🌱 Plants', '😊 Interaction', '💖 About Us'])
+                        ['🏠 Introduction', '🌱 Plants', '😊 Interaction', '💖 About Us'],
+                        key='main_nav')
 
 if page == '🏠 Introduction':
     cover_photo_path = "https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/15.png?raw=true"
-    st.image(cover_photo_path, use_column_width=True)
+    st.image(cover_photo_path, use_container_width=True)
 
-    st.title("🌺Exploring Plant Imagery and Symbolism in the Book of Poetry")
+    st.title("🎭 Constructing the Image of 关羽 in Peking Opera")
 
-    # First submodule: Introduction to the Book of Songs
-    st.header('🏠 Introduction')
+    # Research Background
+    st.header('📖 Research Background / 研究背景')
     st.write('''
-    Let's Embark on a Journey Through Poetry, Plants, and Time!
-
-    The Book of Songs (《诗经》) is a foundational collection of poems intricately tied to social and historical development, serving as a prelude to Chinese national history. Created during the agricultural era, these poems capture:
-
-    - Social Landscapes: Depictions of rural villages, marketplaces, and royal courts.
-    - Historical Snapshots: Insights into ancestral lifestyles and living scenes.
-
-    Through the Book of Songs, later generations can learn about the natural landscapes, flora and fauna, climate changes, land structures, production systems, ethnic distributions, transportation systems, and cultural customs from the early Western Zhou to mid-Spring and Autumn periods. The poems, carefully compiled, serve as vital historical documents for in-depth research into this era.
-
-    In the Book of Songs, plants take center stage, weaving through nearly half of its 305 poems. With 386 plant-related references and 130 unique species, these verses reveal how deeply nature shaped ancient Chinese culture.
+    关羽, as a historical figure from the Three Kingdoms period, has long been regarded in Chinese traditional culture as the embodiment of 忠义 (loyalty and righteousness).  
+    He is not only remembered as a heroic character in historical narratives but has also been continuously reshaped and reproduced in folk beliefs, literary works, and the operatic stage.  
+    However, this image is not immutable; it has been reconstructed across different historical periods and scripts.  
+    With the development of digital humanities methods, we can now employ text mining, network analysis, and visualization techniques to systematically reveal 关羽’s role positioning and cultural significance in Peking Opera scripts.
     ''')
 
-    # Second submodule: Plants in the Spotlight
-    st.header('✨ Plants in the Spotlight')
-    st.subheader('🏆 The Plant Leaderboard')
+    # Core Research Question
+    st.header('❓ Core Research Question / 核心研究问题')
+    st.subheader('🔎 Main Question')
     st.write('''
-    🌿 桑 (Mulberry) – 40 mentions
-
-    🌾 黍 (Millet) – 26 mentions
-
-    🍂 葛 (Kudzu) – 21 mentions
-
-    🍃 草 (Grass) – 19 mentions
-
-    🫘 豆 (Bean) – 11 mentions
-
-    🌲 松 (Pine) – 11 mentions
-
-    🍁 柏 (Cypress) – 10 mentions
-
-    🎋 竹 (Bamboo) – 7 mentions
+    How is 关羽 in Peking Opera scripts constructed as the archetypal figure of 忠义  
+    through the multiple dimensions of linguistic style, character relationships, narrative function, and cultural symbolism?  
     ''')
 
-    # Image placeholders with local paths
-    st.image('https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/1.PNG?raw=true')
-    st.image('https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/2.PNG?raw=true')
-
-    # Third submodule: Plants, Emotions, Seasons & Locations
-    st.header('🌍 Plants, Emotions, Seasons & Locations')
-
-    # 3-1
-    st.subheader('Why should we care about the connection between plants and emotions?')
+    # Research Objectives
+    st.header('🎯 Research Objectives')
+    st.subheader('📚 Academic Significance')
     st.write('''
-    Most plants don’t express a single emotion—they are rich tapestries of overlapping feelings.
-
-    In the Classic of Poetry, emotions are categorized into seven distinct types: 
-
-    🌟 Joy
-
-    🔥 Anger
-
-    💭 Worry
-
-    🤔 Contemplation
-
-    😢 Sadness
-
-    😨 Fear
-
-    😲 Surprise
-
-    By visualizing plants through this emotional lens, we can unlock a deeper understanding of their emotional significance, allowing us to connect with the poems written by our ancestors on a more personal level.
+    To uncover the mechanisms by which 关羽’s image is constructed in Peking Opera scripts through digital methods,  
+    thereby enriching scholarly perspectives on the study of traditional operatic characters.  
     ''')
 
-    # Additional image placeholders for the third submodule
-    st.image('https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/3.png?raw=true')
-    st.image('https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/4.png?raw=true')
-
-    # 3-2
-    st.subheader('Seasonal Distribution of Selected Plants')
+    st.subheader('🛠 Methodological Innovation')
     st.write('''
-        The Book of Songs beautifully ties plants to the rhythm of the seasons, revealing our ancestors' close relationship with nature. Our selected plants are predominantly associated with spring and autumn, reflecting the importance of these seasons in ancient agricultural life, however, 42% are not specified, which shows that the symbolic use of plants beyond seasonal constraints.
-        ''')
+    To integrate text analysis, network analysis, and visualization techniques,  
+    exploring new pathways for applying digital humanities to the study of Chinese opera.  
 
-    # Additional image placeholders for the third submodule
-    st.image('https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/5.png?raw=true')
-    st.image('https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/6.png?raw=true')
+    ''')
 
-    # 3-3
-    st.subheader('Tracing the Ancient Roots')
+    st.subheader('🌏 Cultural Value')
     st.write('''
-        The Book of Songs also reveals the natural and cultural landscapes of early China, showing how the people in the past interacted with their environment. This geographical map invites you to connect with the landscapes that shaped our ancestors’ lives, offering a unique link to the past. As you explore these places, you’ll be reminded of how nature was deeply woven into daily life, agriculture, and culture.
-        ''')
+    To interpret the process by which 关羽’s 忠义 image is symbolized in stage art,  
+    reflecting its enduring place within Chinese cultural memory and value systems.  
+    ''')
 
-    # Load and display the HTML file
-    file_path = pathlib.Path(__file__).parent / 'plants_in_poetry.html'
-    with open(file_path, 'r', encoding='utf-8') as f:
-        html_content = f.read()
-    st.components.v1.html(html_content, height=600, scrolling=True)
+    # Methodology Preview
+    st.header('🔮 Methodology Preview')
 
-    # Additional image placeholders for the third submodule
-    # st.image('https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/5.PNG', caption='Third Plant Image')
-    # st.image('https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/6.PNG', caption='Fourth Plant Image')
+    st.subheader('📝 Linguistic Style Analysis')
+    st.write('''
+    By applying word frequency statistics, keyword extraction, and sentiment analysis,  
+    we can reveal the solemn, forceful, and concise features of 关羽’s lines.  
+    His language often emphasizes terms related to 忠, 义, and 勇, highlighting his moral character.  
+    Comparing his style with other characters allows us to trace how his image evolves across scripts and contexts.  
+    ''')
 
-    categories_content = {
-        "Mulberry(桑)": "期我乎桑中，要我乎上宫[《鄘风·桑中》]\n  - In Ancient Times: widespread in the Yellow River region, especially in Wei State (modern-day northern Henan and southern Hebei).\n  - Today: Mulberry trees are still common in northern China, particularly in areas like the ancient mulberry tree cluster in Xiajin, Shandong.",
-        "Kudzu(葛)": "“葛生蒙楚，蔹蔓于野”[《周南·樛木》]\n  - In Ancient Times: Widespread in ancient China, especially in Chu (modern-day Hubei and Hunan).\n  - Today: Kudzu still grows in southern China, primarily used for traditional medicinal purposes and food processing.",
-        "Panicum miliaceum(黍)": "“彼黍离离，彼稷之苗”[《王风·黍离》]\n  - In Ancient Times: Widely cultivated in the Yellow River region.\n  - Today: Still grown in northern China, especially in the Yellow River region, known as yellow millet, used in food processing.",
-        "Various grasses(草)": "“蒹葭苍苍，白露为霜”[《秦风·蒹葭》]\n  - In Ancient Times: Various grasses, such as reeds, were common in ancient China’s wetland environments.\n  - Today: Grasses are found all over China, especially in the north, used in livestock farming, weaving, and other purposes.",
-        "Beans and peas(豆)": "“菽（大豆）”[《豳风·七月》]\n  - In Ancient Times: Beans played an important role in ancient China’s agricultural society.\n  - Today: Beans are grown across China, being an important source of food and vegetables.",
-        "Pine(松)": "“松柏丸丸，其下侯旬”[《小雅·斯干》]\n  - In Ancient Times: Pines were widespread in ancient China, especially in mountainous and hilly areas.\n  - Today: Pine trees are very common throughout China, particularly in the north and southwest, used for construction, furniture, and other purposes.",
-        "Cypress(柏)": "“桧楫松舟”[《鄘风·柏舟》]\n  - In Ancient Times: Cypress trees were common in areas near water bodies in ancient China.\n  - Today: Cypress trees are primarily found in southern China, especially in Sichuan, Hubei, and Guizhou provinces.",
-        "Bamboo(竹)": "“籊籊竹竿，以钓于淇”[《卫风·竹竿》]\n  - In Ancient Times: Bamboo was found along rivers in ancient China.\n  - Today: Bamboo grows widely in China, especially in the southern regions, used for construction, furniture, weaving, and various other purposes."
-    }
+    st.subheader('🤝 Character Relationship Analysis')
+    st.write('''
+    By constructing co-occurrence networks, we can visualize 关羽’s interactions with 刘备, 张飞, 曹操 and others,  
+    and measure his centrality in the narrative.  
+    This helps explain how relational dynamics contribute to his positioning as the embodiment of 忠义.  
+    ''')
 
-    # 创建展开框显示各类别内容
-    for category, content in categories_content.items():
-        with st.expander(f"{category}"):
-            st.write(content)
+    st.subheader('📖 Narrative Function Analysis')
+    st.write('''
+    Using narratological frameworks, we can identify 关羽’s functions:  
+    as an agent of plot progression, a moral symbol, or a source of conflict.  
+    Segmenting scripts into narrative nodes reveals whether his functions remain consistent or vary across plays.  
+    ''')
+
+    st.subheader('🎨 Cultural Symbolism Analysis')
+    st.write('''
+    关羽 is also a cultural icon. His red face symbolizes loyalty and righteousness,  
+    the 青龙偃月刀 represents martial power, and temple worship reinforces his deification.  
+    Extracting symbolic terms and imagery shows how 关羽 is staged as a cultural symbol of 忠义.  
+
+    ''')
+
+    # Data Sources
+    st.header('📂 Data Sources / 相关数据集')
+    st.write('''
+    - **中国京剧戏考网** ([https://scripts.xikao.com/](https://scripts.xikao.com/)):  
+      A comprehensive digital archive of 京剧 scripts, containing over 1100 plays and 1500+ script versions.  
+      收录自2000年以来的京剧剧本，目前已包含 1162 出剧目、1578 出剧本，是最系统的京剧剧本数字化数据库之一。  
+
+    - **国立传统艺术中心 (Taiwan)** ([http://www.ncfta.gov.tw/cp.aspx?n=1784](http://www.ncfta.gov.tw/cp.aspx?n=1784)):  
+      Provides digitized resources on traditional opera, including costumes, stage performance archives, and cultural artifacts.  
+      提供京剧服饰、表演艺术与相关档案的数字化资源，涵盖舞台服装、行头、化妆等文化符号信息。
+    ''')
+
+    # Expected Outcomes
+    st.header('🌟 Expected Outcomes / 预期成果')
+    st.write('''
+    - **Visualizations / 可视化成果**: word clouds, relationship networks, narrative timelines, symbolic imagery maps.  
+    - **Scholarly Contribution / 学术贡献**: a multidimensional framework for analyzing operatic characters using digital humanities.  
+    - **Cultural Insight / 文化洞见**: deeper understanding of how 忠义 is embodied and transmitted through the figure of 关羽 in Peking Opera.  
+    ''')
+
+    # Timestamp
+    st.caption(f"🔄 Page last refreshed at: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
 elif page == '🌱 Plants':
 
@@ -139,7 +121,8 @@ elif page == '🌱 Plants':
     # Sub-navigation for the "Plants" page
     plant_page = st.sidebar.radio('Plant Sections',
                                   ['🌿 Mulberry', '🍂 Kudzu', '🌾 Millet', '🍃 Grass', '🫘 Beans', '🌲 Pine and Cypress',
-                                   '🎋 Bamboo'])
+                                   '🎋 Bamboo', 'Impact & Innovation'],
+                                  key='plant_nav')
 
     if plant_page == '🌿 Mulberry':
         st.header('Mulberry 桑')
@@ -622,9 +605,7 @@ elif page == '🌱 Plants':
 
         for tab, content in zip(tabs, contents):
             with tab:
-                st.write(content)
-
-
+                st.write(content)   
     elif plant_page == '🎋 Bamboo':
         st.header('🎋 Bamboo 竹')
         st.write('''
@@ -698,7 +679,6 @@ elif page == '🌱 Plants':
         for tab, content in zip(tabs, contents):
             with tab:
                 st.write(content)
-
 elif page == '😊 Interaction':
     cover_photo_path = "https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/17.png?raw=true"
     st.image(cover_photo_path, use_column_width=True)
