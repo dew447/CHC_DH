@@ -1,6 +1,7 @@
 import streamlit as st
 import pathlib
 import base64
+import datetime
 
 
 # Set the page configuration
@@ -12,9 +13,7 @@ page = st.sidebar.radio('Navigation',
                         key='main_nav')
 
 if page == '🏠 Introduction':
-    cover_photo_path = "https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/15.png?raw=true"
-    st.image(cover_photo_path, use_container_width=True)
-
+    st.image("image/introduction/introduction1.jpg", use_container_width=True)
     st.title("🎭 Constructing the Image of 关羽 in Peking Opera")
 
     # Research Background
@@ -108,8 +107,6 @@ if page == '🏠 Introduction':
     - **Cultural Insight / 文化洞见**: deeper understanding of how 忠义 is embodied and transmitted through the figure of 关羽 in Peking Opera.  
     ''')
 
-    # Timestamp
-    st.caption(f"🔄 Page last refreshed at: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
 elif page == '🌱 Plants':
 
