@@ -2,19 +2,7 @@ import streamlit as st
 import pathlib
 import base64
 import datetime
-from pathlib import Path
 
-
-APP_DIR = Path(__file__).resolve().parent   # main.py 所在目录
-img_path = APP_DIR / "image" / "introduction" / "Cover1.0.jpg"
-
-if not img_path.exists():
-    st.error(f"未找到图片：{img_path}")
-    # 可选：列出该目录下实际有哪些文件，帮助定位命名问题
-    intro_dir = APP_DIR / "image" / "introduction"
-    st.write("该目录下的文件：", [p.name for p in intro_dir.glob("*")])
-else:
-    st.image(str(img_path), use_container_width=True)
 
 # Set the page configuration
 st.set_page_config(page_title='My Website', layout='wide')
@@ -25,7 +13,7 @@ page = st.sidebar.radio('Navigation',
                         key='main_nav')
 
 if page == '🏠 Introduction':
-   
+    st.image("image/introduction/Cover1.0.jpg", use_container_width=True)
     st.title("🎭 Constructing the Image of 关羽 in Peking Opera")
     
     st.write('''
