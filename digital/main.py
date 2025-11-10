@@ -13,11 +13,9 @@ page = st.sidebar.radio('Navigation',
                         key='main_nav')
 
 if page == '🏠 Introduction':
-    st.image("image/introduction/introduction1.jpg", use_container_width=True)
+    st.image("image/introduction/Cover1.0.jpg", use_container_width=True)
     st.title("🎭 Constructing the Image of 关羽 in Peking Opera")
-
-    # Research Background
-    st.header('📖 Research Background / 研究背景')
+    
     st.write('''
     关羽, as a historical figure from the Three Kingdoms period, has long been regarded in Chinese traditional culture as the embodiment of 忠义 (loyalty and righteousness).  
     He is not only remembered as a heroic character in historical narratives but has also been continuously reshaped and reproduced in folk beliefs, literary works, and the operatic stage.  
@@ -26,12 +24,13 @@ if page == '🏠 Introduction':
     ''')
 
     # Core Research Question
-    st.header('❓ Core Research Question / 核心研究问题')
+    st.header('❓ Core Research Question')
     st.subheader('🔎 Main Question')
     st.write('''
     How is 关羽 in Peking Opera scripts constructed as the archetypal figure of 忠义  
     through the multiple dimensions of linguistic style, character relationships, narrative function, and cultural symbolism?  
     ''')
+
 
     # Research Objectives
     st.header('🎯 Research Objectives')
@@ -88,7 +87,7 @@ if page == '🏠 Introduction':
     ''')
 
     # Data Sources
-    st.header('📂 Data Sources / 相关数据集')
+    st.header('📂 Data Sources')
     st.write('''
     - **中国京剧戏考网** ([https://scripts.xikao.com/](https://scripts.xikao.com/)):  
       A comprehensive digital archive of 京剧 scripts, containing over 1100 plays and 1500+ script versions.  
@@ -100,11 +99,11 @@ if page == '🏠 Introduction':
     ''')
 
     # Expected Outcomes
-    st.header('🌟 Expected Outcomes / 预期成果')
+    st.header('🌟 Expected Outcomes')
     st.write('''
-    - **Visualizations / 可视化成果**: word clouds, relationship networks, narrative timelines, symbolic imagery maps.  
-    - **Scholarly Contribution / 学术贡献**: a multidimensional framework for analyzing operatic characters using digital humanities.  
-    - **Cultural Insight / 文化洞见**: deeper understanding of how 忠义 is embodied and transmitted through the figure of 关羽 in Peking Opera.  
+    - **Visualizations**: word clouds, relationship networks, narrative timelines, symbolic imagery maps.  
+    - **Scholarly Contribution**: a multidimensional framework for analyzing operatic characters using digital humanities.  
+    - **Cultural Insight**: deeper understanding of how 忠义 is embodied and transmitted through the figure of 关羽 in Peking Opera.  
     ''')
 
 
