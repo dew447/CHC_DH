@@ -13,9 +13,10 @@ page = st.sidebar.radio('Navigation',
                         key='main_nav')
 
 if page == '🏠 Introduction':
-    st.image("image/introduction/Cover1.0.jpg", use_container_width=True)
+    st.image("image/introduction/Cover1.0.jpg", use_container_width=True) 
     st.title("🎭 Constructing the Image of 关羽 in Peking Opera")
     
+
     st.write('''
     关羽, as a historical figure from the Three Kingdoms period, has long been regarded in Chinese traditional culture as the embodiment of 忠义 (loyalty and righteousness).  
     He is not only remembered as a heroic character in historical narratives but has also been continuously reshaped and reproduced in folk beliefs, literary works, and the operatic stage.  
@@ -107,7 +108,7 @@ if page == '🏠 Introduction':
     ''')
 
 
-elif page == '🌱 Plants':
+elif page == 'Analysis':
 
     cover_photo_path = "https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/16.png?raw=true"
     st.image(cover_photo_path, use_column_width=True)
@@ -351,6 +352,7 @@ elif page == '🌱 Plants':
 
 
     elif plant_page == '🍃 Grass':
+
         st.header('🍃 Grass 蔓草/野草')
 
         st.subheader('Symbolic Poems Associated with the Plant')
@@ -427,182 +429,7 @@ elif page == '🌱 Plants':
             with tab:
                 st.markdown(content, unsafe_allow_html=True)
 
-    elif plant_page == '🫘 Beans':
-        st.header('🫘 Beans 豆')
-        st.write('''
-        Beans are not only an important food crop but also a significant element in social interactions and rituals.
 
-        《小雅·采菽》：“采菽采菽，筐之莒之。君子来朝，何锡予之？虽无予之？路车乘马。又何予之？玄衮及黼。”
-
-        This poem describes the scenario where feudal lords visit the emperor, and the emperor presents soybeans as a gift, highlighting the importance of soybeans in society at that time and their value as a gift.
-
-        《豳风·七月》：“七月食瓜，八月断壶，九月叔苴。” 
-
-        Here, "叔苴" (shū jū) likely refers to leguminous plants, reflecting the ancient practice of gathering and consuming beans in different seasons.
-
-        ''')
-
-        st.subheader('Symbolic Poems Associated with the Plant')
-        poems = [
-            ("《小雅·采菽》",
-             '''- 采菽采菽，筐之筥之。\n- 君子来朝，何锡予之？\n- 虽无予之？路车乘马。\n- 又何予之？玄衮及黼'''),
-            ("《伐柯》",
-             '''- 伐柯如何？匪斧不克。\n- 取妻如何？匪媒不得。\n- 伐柯伐柯，其则不远。\n- 我觏之子，笾豆有践。'''),
-            ("《伐木》",
-             '''- 伐木于阪，酾酒有衍。笾豆有践，兄弟无远。民之失德，乾餱以愆。\n- 有酒湑我，无酒酤我。坎坎鼓我，蹲蹲舞我。迨我暇矣，饮此湑矣。'''),
-            ("《生民》",
-             '''- 诞降嘉种，维秬维秠，维穈维芑。恒之秬秠，是获是亩。恒之穈芑，是任是负。以归肇祀。\n- 诞我祀如何？或舂或揄，或簸或蹂。释之叟叟，烝之浮浮。载谋载惟。取萧祭脂，取羝以軷，载燔载烈，以兴嗣岁。\n- 卬盛于豆，于豆于登。其香始升，上帝居歆。胡臭亶时。后稷肇祀。庶无罪悔，以迄于今。'''),
-            ("《既醉》",
-             '''- 既醉以酒，既饱以德。君子万年，介尔景福。\n- 既醉以酒，尔肴既将。君子万年，介尔昭明\n- 昭明有融，高朗令终，令终有俶。公尸嘉告。\n- 其告维何？笾豆静嘉。朋友攸摄，摄以威仪。''')
-        ]
-
-        # 创建多列
-        cols = st.columns(5)  # 根据需要调整列数
-
-        for col, (title, content) in zip(cols, poems):
-            with col:
-                # 使用更小号的标题字体
-                st.markdown(f"<h4 style='text-align: center; font-size:18px;'>{title}</h4>", unsafe_allow_html=True)
-                st.write(content)
-
-        st.subheader('1. Seasonal connections ')
-        tabs = st.tabs(["Statistical Results", "Human Activities"])
-        contents = [
-            '''Sifting through the poems related to ‘豆’ in The Book of Songs and the temporal elements contained therein, it is found that ‘豆’ occurs 10 times in total, and only one of the poems is related to autumn, while the rest of the poems are not directly related to the seasons or even other temporal elements. However, nine of these ten occurrences are from the Xiaoya (小雅), Daya (大雅), and Ode (頌) sections of The Book of Songs. These sections are closely related to rituals and banquets, and are mainly concerned with recording and describing the contents and rituals of rituals and banquets.''',
-            '''The ‘籩豆’ in these verses are mostly related to rituals, such as the sacrificial scenes described in ‘大雅·生民之什·生民’ and ‘頌·魯頌·閟宮’, which reflect the importance of the rituals in ancient times. The ‘籩豆’ in the verses is also closely related to the culture of feasting, such as the banquets for brothers and guests described in ‘小雅·鹿鳴之什·常棣’ and ‘小雅·鹿鳴之什·伐木’ (Xiao Ya - Lu Ming Zhi Shi - False Wood), which reflect the banquets of ancient societies. Through the setting up of ‘籩豆’ and the banqueting activities, the poems demonstrate the social interaction and the pursuit of harmonious relationships in ancient societies. For example, ‘兄弟無遠’ in ‘小雅·北山之什·楚茨’ emphasises the harmony among brothers. In the Song of Songs - Lu Song - égong, the phrase ‘籩豆大房’ is related to the theme of harvest and abundance, reflecting the celebration of and gratitude for a good agricultural harvest.<br>In summary, these verses, through their descriptions of ‘籩豆’, show the social life of ancient times in terms of rituals, banquets, socialising, and agricultural harvests, reflecting the rich cultural connotations and social values of the Classic of Poetry, as an important part of the treasure trove of classical Chinese literature.'''
-        ]
-
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.write(content, unsafe_allow_html=True)
-
-        st.subheader('2. Emotional associations')
-        tabs = st.tabs(["Rituals and Reverence", "Harmony", "Respect"])
-        contents = [
-            '''In the book of poems,  《诗经·大雅·生民》“卬盛于豆，于豆于登，其香始升。上帝居歆，胡臭亶时。.” It describes a ritual in which food is served in beans (an ancient food container), and as the aroma of the food rises, it expresses reverence for God and prayers for the gods to enjoy it.''',
-            '''“我觏之子、笾豆有践。” in 《幽风·伐柯》 describes the harmonious scene of people gathering together and sharing food at a banquet, reflecting the friendly interaction and affection between people.''',
-            '''In 《诗经·小雅·宾之初筵》，“宾之初筵、左右秩秩。笾豆有楚、淆核维旅”，The first banquet of the guest was held in an orderly manner, and the guests were seated in accordance with the etiquette, reflecting the respect and courtesy shown to the guests.'''
-        ]
-
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.write(content)
-
-        st.subheader('3. Human qualities')
-        st.write('''
-                            《幽风·伐柯》
-
-                            伐柯如何、匪斧不克。取妻如何、匪媒不得。
-
-                            伐柯伐柯，其则不远。我覯之子，籩豆有践。
-
-                            《小雅·宾之初筵》
-
-                            賓之初筵、左右秩秩。籩豆有楚、殽核維旅。
-
-                            酒既和旨、飲酒孔偕。鐘鼓既設、舉醻逸逸。
-                            ''')
-
-        st.image('https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/12.png?raw=true', width=300)
-
-        tabs = st.tabs(["Family Affection", "Order and Harmony"])
-        contents = [
-            '''This poem represents the arrangement and preparation of food, symbolizing the thoughtfulness of the banquet and respect for guests. "兄弟无远" expresses the idea of strengthening family and friendship, eliminating barriers, and enhancing connections between each other through banquets. Therefore, 'beans' here symbolize the close connection between friendship and family, as well as respect and courtesy towards guests.''',
-            '''In these texts, '豆' is mentioned alongside '笾,' depicting the meticulous arrangement of food at a banquet, which mirrors the solemnity and orderliness of the event. Consequently, 'beans' emblemize the structured harmony that characterizes the feast."'''
-        ]
-
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.write(content)
-
-
-    elif plant_page == '🌲 Pine and Cypress':
-        st.header('🌲 Pine and Cypress 松柏')
-        st.write('''
-                        Unlike the deciduous trees that change color and shed their leaves in the autumn, the needles of pine a remain green all year round, even in the winter. This characteristic adds vitality to the cold season. Their wood, known for its corrosion resistance and strength, is often used in the construction of palaces and boats.
-
-                        《商颂·殷武》：“松桷有梴，旅楹有闲，寝成孔安。”
-
-                        This extract describes: "Pine beams with branches, traveling pillars with leisure, the sleeping temple is very peaceful," indicating that pine wood was used to build sleeping temples, showing its magnificence. 
-
-                        《邶风·柏舟》：“泛彼柏舟，亦泛其流 。”
-
-                        《鄘风·柏舟》：“泛彼柏舟，在彼中河。”
-
-                        《卫风·竹竿 》：“淇水浟浟，桧楫松舟。”
-
-                        Here, the boat made of cypress wood, "柏舟," is used to express a sense of responsibility of "worrying about the monarch while being far from the rivers and lakes," as well as a clean and elegant life that does not follow the world's corruption. The cypress boat is a state of being a person. It also symbolizes a lofty state of living a quiet and nurturing life.
-                        ''')
-
-        st.subheader('Symbolic Poems Associated with the Plant')
-        poems = [
-            ("《小雅·斯干》",
-             '''- 秩秩斯干，幽幽南山。如竹苞矣，如松茂矣。兄及弟矣，式相好矣，无相犹矣。\n- 似续妣祖，筑室百堵，西南其户。爰居爰处，爰笑爰语。\n- 约之阁阁，椓之橐橐。风雨攸除，鸟鼠攸去，君子攸芋。\n- 如跂斯翼，如矢斯棘，如鸟斯革，如翚斯飞，君子攸跻。\n- 殖殖其庭，有觉其楹。哙哙其正，哕哕其冥。君子攸宁。'''),
-            ("《商颂·殷武》",
-             '''- 商邑翼翼，四方之极。赫赫厥声，濯濯厥灵。寿考且宁，以保我后生。\n- 陟彼景山，松柏丸丸。是断是迁，方斫是虔。松桷有梴，旅楹有闲，寝成孔安。'''),
-            ("《天保》",
-             '''- 吉蠲为饎，是用孝享。禴祠烝尝，于公先王。君曰：卜尔，万寿无疆。\n- 神之吊矣，诒尔多福。民之质矣，日用饮食。群黎百姓，遍为尔德。\n- 如月之恒，如日之升。如南山之寿，不骞不崩。如松柏之茂，无不尔或承。'''),
-            ("《頍弁》",
-             '''- 有頍者弁，实维伊何？尔酒既旨，尔肴既嘉。岂伊异人？兄弟匪他。\n- 茑与女萝，施于松柏。未见君子，忧心奕奕；既见君子，庶几说怿。\n- 有頍者弁，实维何期？尔酒既旨，尔肴既时。岂伊异人？兄弟具来。\n- 茑与女萝，施于松上。未见君子，忧心怲々；既见君子，庶几有臧。'''),
-            ("《皇矣》",
-             '''- 帝省其山，柞棫斯拔，松柏斯兑。帝作邦作对，自大伯王季。维此王季，因心则友。则友其兄，则笃其庆，载锡之光。受禄无丧，奄有四方。'''),
-        ]
-
-        # 创建多列
-        cols = st.columns(5)  # 根据需要调整列数
-
-        for col, (title, content) in zip(cols, poems):
-            with col:
-                # 使用更小号的标题字体
-                st.markdown(f"<h4 style='text-align: center; font-size:18px;'>{title}</h4>", unsafe_allow_html=True)
-                st.write(content)
-
-        st.subheader('1. Seasonal connections ')
-        tabs = st.tabs(["Statistical Results", "Symbolism"])
-        contents = [
-            '''By filtering the poems related to ‘松 (Pine)’ and ‘柏 (Cypress)’ in The Book of Songs and the temporal elements contained in them, the results show that ‘松’ and ‘柏’ appear eight times each, and are often mentioned together (four times in total). ''',
-            '''However, the relationship between pine and cypress and time is also not very strong, with only one poem (‘颂·鲁颂·閟宫’) reflecting autumn, and none of the other verses reflecting seasons or other temporal elements, which is perhaps also related to the evergreen nature of the pine and cypress, which makes them symbols of longevity and eternity, such as ‘如南山之壽、不騫不崩。如松柏之茂、無不爾或承’ in ‘小雅·鹿鳴之什·天保’, which reflects people's desire and respect for the evergreen nature.'''
-        ]
-
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.write(content)
-
-        st.subheader('2. Emotional associations')
-        tabs = st.tabs(
-            ["Resilience and Heroism", "Historical Mission and Sense of Concern", "Profound Longing and Inner Sorrow"])
-        contents = [
-            '''Pine and cypress, because of its evergreen, never withering characteristics, was given the connotation of personality, symbolizing the heroic spirit of steadfastness and indomitable. For example, in 《小雅·斯干》,“如竹苞矣，如松茂矣”, with the pine luxuriant to symbolize the prosperity, tenacity and indomitable spiritual qualities.''',
-            '''The imagery of pines and cypresses also reflects a strong sense of historical mission and a sense of concern, such as the 《大雅·皇矣》 in the “帝省其山，柞棫斯拔，松柏斯兑” symbolizes the sense of historical mission.''',
-            '''In 《卫风·竹竿》, the poem “淇水滺滺，桧楫松舟”, the woman's deep longing for her home town in the faraway country and her inner sadness are expressed through the imagery of the pine boat. The word “pine” here not only represents the strength and durability of pine wood, but also symbolizes the woman's deep affection for her hometown and her longing for her loved ones. The drifting of the pine boat in the Qi water symbolizes the woman's inner wandering and anxiety.'''
-        ]
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.write(content)
-
-        st.subheader('3. Human qualities')
-        st.write('''
-                            《小雅·斯干》
-
-                            秩秩斯干，幽幽南山。如竹苞矣，如松茂矣。
-
-                            《大雅·皇矣》
-
-                            帝省其山，柞棫斯拔，松柏斯兑。
-                            ''')
-
-        st.image('https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/13.png?raw=true', width=300)
-
-        tabs = st.tabs(["Perseverance and Mutual Support", "Resilience in Adversity"])
-        contents = [
-            '''"如竹苞矣，如松茂矣： expresses the image of pine trees flourishing and standing tall, symbolizing the noble qualities and strong will of human beings. The word 'pine' here not only represents the vitality of nature, but also symbolizes the indomitable and persevering spirit of people in the face of difficulties and challenges. The characteristic of pine trees echoes the virtues of harmonious coexistence and mutual support among brothers, reflecting the emphasis on the value of family and social harmony.''',
-            '''The "pine and cypress" in "松柏斯兑" symbolizes steadfast purity and indomitable spirit. Pine and cypress trees were regarded as symbols of nobility and strength in ancient times. They were able to maintain their upright posture even in harsh environments, which corresponds to the firm will and noble character displayed by people in the face of adversity. This unyielding spirit is a precious asset to personal qualities and also a moral standard respected by society.'''
-        ]
-
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.write(content)   
-    elif plant_page == '🎋 Bamboo':
         st.header('🎋 Bamboo 竹')
         st.write('''
                         In ancient times, Bamboo served as musical instruments, material to make books, and a variety of daily utensils. Various bamboo-made musical instruments were mentioned in the book, such as flutes, pipes, sheng (a reed mouth organ), and yue (a type of ancient Chinese flute). Many bamboo made utensils where also described, including baskets, tubs, winnowing baskets, boxes, fish traps, hats, small bamboo cages, and bamboo containers.
@@ -675,6 +502,7 @@ elif page == '🌱 Plants':
         for tab, content in zip(tabs, contents):
             with tab:
                 st.write(content)
+
 elif page == '😊 Interaction':
     cover_photo_path = "https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/17.png?raw=true"
     st.image(cover_photo_path, use_column_width=True)
