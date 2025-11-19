@@ -405,7 +405,171 @@ This study quantitatively analyzes Guan Yu's narrative function from multiple di
         st.write('''
 * Through Guan Yu's case, the narrative theories such as "diversity of role functions" and "dynamic evolution of functions" are verified, which provides concrete samples for the analysis of literary role functions.''')
     elif Analysis_page == 'Scripts Analysis':
-        st.header("Character Positioning Analysis of Guan Yu")
+        st.header("Scripts Analysis of Guan Yu in Peking Opera")
+        st.header("Linguistic Style and Personality Background")
+        st.write("""
+
+            As one of the most renowned generals of the Three Kingdoms, Guan Yu is traditionally portrayed with a “red-faced” heroic image in Peking Opera.
+            This study extracts his lines from multiple scripts and analyzes word frequency, high-frequency terms, and sentiment orientation,
+            in order to investigate his linguistic style and symbolic representation.
+
+            Based on text-mining results, Guan Yu appears as a figure whose speech embodies loyalty, righteousness, steadfastness,
+            and a solemn personality core. His emotional tendencies reflect his hierarchical status and moral position.
+            """)
+        st.header(" 1. High-Frequency Vocabulary")
+        st.image("image/Scripts/1.png")
+        st.image("image/Scripts/2.png")
+        st.write("""
+            Among all terms used by Guan Yu, 255 high-frequency words are identified. Many reveal his irreplaceable emotional and social position.
+
+            Common high-frequency relational terms include:
+            • “Eldest brother (大哥)” (122)
+            • “Sir (先生)” (120)
+            • “Younger brother (贤弟)” (112)
+            • “Fourth brother (四弟)” (95)
+            • “Second brother (二位)” (88)
+            • “Elder brother (兄长)” (70)
+            • “Princess / Lady of the palace (皇嫂)” (50)
+            • “Second sister-in-law (二嫂)” (46)
+
+            These words construct a dense relational and kinship network, centered around sworn brotherhood and royal ties.
+
+            Guan Yu repeatedly uses respectful forms of address, demonstrating clear hierarchical order, deep fraternal affection,
+            and strict moral propriety. His language reveals a personality that values etiquette, discipline, and unwavering loyalty.
+
+            A second cluster of high-frequency terms comes from self-referential address such as:
+            • “I, Guan Yunchang (关某)” (123)
+            • “This one (某)” (656)
+
+            These forms emphasize humility yet dignity, reflecting his noble identity.
+
+            By contrast, terms involving antagonists — such as Cao Cao (104), rebels (奸) (61), and traitors (逆) (47) — constitute another lexical group.
+            This set reflects:
+            • Guan Yu’s unwavering sense of justice,
+            • His moral stance against treachery,
+            • His ultimate conflict with adversaries.
+
+            Guan Yu’s linguistic world is therefore built upon loyalty to brothers, allegiance to righteousness, and moral resistance to wrongdoing.
+            Even in conversations with enemies, he maintains clarity of role and responsibility, expressing stable emotional control and a clear worldview.
+            """)
+
+        st.subheader("2. Variety in Vocal Techniques")
+        st.image("image/Scripts/6.png")
+        st.write("""
+           Across the scripts analyzed, Guan Yu’s singing style uses a wide range of techniques:
+
+           • Heavy, stately vocal lines to establish authority  
+           • Powerful resonance in central sections  
+           • Western-style falsetto (82 occurrences) to express inner sorrow  
+           • Short and forceful tones (52 occurrences) for dramatic tension
+
+           These choices give his vocal performance an ancient, dignified color, befitting a sacred, disciplined, and ritualized martial figure.
+           He is presented not as a reckless warrior but as a solemn, graceful leader.
+
+           The Xiangyan Index calculated as 1.4821 shows that his vocal style possesses moderate-to-high diversity.
+           He does not rely on a single pattern but adjusts his vocal techniques flexibly according to dramatic context.
+
+           Bright tones such as:
+           • “White-tone chanting” (25)
+           • “Baritone resonance” (40)
+           • “Open-throat declamation” (218)
+           • “Nasal chanting” (108)
+
+           all appear frequently, revealing rich variation and emotional depth.
+
+           These stylistic choices highlight:
+           • his calm dignity,
+           • ritualized authority,
+           • and steady self-possession.
+
+           During climactic scenes, Guan Yu demonstrates restrained anger, moral judgment, and awe-inspiring presence through vocal shifts between
+           falsetto, chest voice, scattered tones, fast declamation, and various rhythmic transitions.
+
+           Techniques such as:
+           • “Western-style falsetto” (47)
+           • “Dispersed tones”
+           • “Fast rhymed chanting” (28)
+
+           are used in scenes involving:
+           • confrontation,
+           • battle readiness,
+           • moral reasoning,
+           • righteous indignation.
+
+           These techniques strengthen his image as a heroic, fierce, yet morally upright general,
+           giving his performances remarkable dramatic power.
+           """)
+
+        st.subheader("3. Personality and Emotional Traits")
+        st.write("""
+          Guan Yu’s emotional core centers on loyalty:
+          • loyalty to his sworn elder brother (Liu Bei),
+          • loyalty to Zhang Fei,
+          • loyalty to the royal widow (the two imperial ladies).
+
+          Loyalty is his emotional anchor stone.
+
+          His pride and confidence appear through frequent self-references and defiant attitudes toward Cao Cao, Sun Quan,
+          and other opposing forces. These expressions show the deep-rooted pride of a heroic figure conscious of his own righteousness.
+
+          The fierce, heroic traits are further supported by high-frequency words associated with:
+          • warhorses,
+          • Cao Cao,
+          • battle,
+          • anger,
+          • martial action verbs.
+
+          Combined with impassioned singing techniques, these terms construct the dramatic persona of a first-rank warrior among the “Ten Thousand Troops.”
+          """)
+
+        st.subheader("4. Emotional Structure Based on a Classical Chinese Sentiment Lexicon")
+        st.image("image/Scripts/5.png")
+        st.image("image/Scripts/3.png")
+        st.write("""
+        Using a custom Classical Chinese sentiment lexicon, all of Guan Yu’s lines are annotated and scored.
+        The results reveal a clear three-layer emotional structure:
+
+        • High-positive zone (≥ 0.7): dominated by commendatory terms and strong positive verbs such as “loyalty”, “righteousness”,
+          “virtue”, “prestige”, “bravery”. These lines appear in oaths, declarations of stance, and expressions of responsibility,
+          constructing his image as a moral exemplar and “Martial Sage of Loyalty and Righteousness”.
+        • Neutral zone (0.4–0.6): made up of descriptive, judgmental, and command lines used to assess the situation, deploy troops,
+          and discuss strategies. The tone is calm and restrained, highlighting his rational, steady side as a commander.
+        • Low-emotion zone (≤ 0.3): driven by strong negative action verbs such as “kill”, “behead”, “execute”, “capture”, “rebuke angrily”.
+          These are concentrated in battle scenes and confrontations with traitors, expressing not weakness, but a heroic, righteous fury.
+
+        Together, these layers form a stable model: loyalty and virtue at the surface, composure and self-control inside,
+        and thunderous martial ferocity at the core.
+        """)
+
+        st.subheader("4. Cross-Script Consistency: A Shared Archetype of Lord Guan")
+        st.image("image/Scripts/4.png")
+        st.write("""
+        When we compare different plays such as “Meeting at the Single Blade”, “Huarong Trail”, “Beheading Hua Xiong”,
+        “Meeting at the Ancient City”, and “Battle of Changsha”, we find that:
+
+        • High-positive lines are consistently clustered around loyalty, righteousness, and moral authority.
+        • Neutral narrative and command lines show similar patterns of calm, concise, and elegant Classical Chinese across scripts.
+        • Low-emotion lines are always tied to battle, denunciation of treachery, or decisive choices about life and death.
+
+        This indicates that Guan Yu is not shaped by a single script, but by a long-term operatic tradition that repeatedly reproduces
+        a shared “Lord Guan archetype”: loyalty as foundation, civil virtue as body, martial ferocity as edge, steadiness as temperament.
+        """)
+
+        st.subheader("5. Alignment with the Hongsheng Role Type")
+        st.write("""
+        The emotional structure above matches closely with the requirements of the Hongsheng role type in Peking Opera,
+        which emphasizes majesty, dignity, firmness, and heroic intensity.
+
+        • High-positive emotions correspond to the Hongsheng ideals of solemnity and moral nobility.
+        • The large proportion of neutral, steady lines fits the vocal requirement of being calm, weighty, and restrained.
+        • Concentrated low-emotion segments with “kill”, “behead”, and “anger” provide textual support for explosive moments on stage,
+          where voice, rhythm, movement, and weapon routines jointly display Guan Yu’s fierce heroism.
+
+        In this way, textual features, emotional structure, and performative conventions interlock,
+        turning Guan Yu into a highly stylized yet deeply influential image of the Martial Saint in Peking Opera.
+        """)
+
+
 
 
 
