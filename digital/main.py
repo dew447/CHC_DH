@@ -642,26 +642,24 @@ elif page == '💖 About Us':
     st.subheader('✨ Team Members')
     st.write('''1.Technological Development:
 
-    Shen Ziqi 
+    Shen Ziqi 25054114g
 
-    Ye Haoqi 
+    Ye Haoqi 25109545g
     
-    Lve Shao Han
+    LYU Shaowei 25113125g
      
-    Ye Jing
+    XIE Jing 25064769g
 
                 ''')
     st.write('''2.Humanities Analysis:
 
-    XIAO Qifang (24003563G@connect.polyu.hk)
+    LIU Muyuan 25052226g
 
-    DENG Junxuan(24043858G@connect.polyu.hk)
+    PAN Yiting 25053695g
 
-    ZENG Jingwen(24073054G@connect.polyu.hk)
+    HUANG Yanhui 25132941g
 
-    ZHANG Fengyue (24100774G@connect.polyu.hk)
-
-    TIAN Yuan (24073183G@connect.polyu.hk)
+    JI Jiaxun 25118287g
             ''')
 
     st.subheader('🔍 Methodology')
