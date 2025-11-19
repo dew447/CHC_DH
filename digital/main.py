@@ -9,13 +9,13 @@ st.set_page_config(page_title='My Website', layout='wide')
 
 # Sidebar navigation
 page = st.sidebar.radio('Navigation',
-                        ['🏠 Introduction', '🌱 Plants', '😊 Interaction', '💖 About Us'],
+                        ['🏠 Introduction', '🌱 Analysis', '😊 Interaction', '💖 About Us'],
                         key='main_nav')
 
 if page == '🏠 Introduction':
     st.image("image/introduction/Cover1.0.jpg", use_container_width=True) 
     st.title("🎭 Constructing the Image of 关羽 in Peking Opera")
-    
+
 
     st.write('''
     关羽, as a historical figure from the Three Kingdoms period, has long been regarded in Chinese traditional culture as the embodiment of 忠义 (loyalty and righteousness).  
@@ -108,400 +108,306 @@ if page == '🏠 Introduction':
     ''')
 
 
-elif page == 'Analysis':
+elif page == '🌱 Analysis':
 
-    cover_photo_path = "https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/16.png?raw=true"
-    st.image(cover_photo_path, use_column_width=True)
+    st.image("image/introduction/Cover1.0.jpg", use_container_width=True)
 
-    st.title('🌱 Deep Dives into Plant Symbolism')
+    st.title('🌱 Deep Dives into GuanYu in Peking Opera')
 
-    # Sub-navigation for the "Plants" page
-    plant_page = st.sidebar.radio('Plant Sections',
-                                  ['🌿 Mulberry', '🍂 Kudzu', '🌾 Millet', '🍃 Grass', '🫘 Beans', '🌲 Pine and Cypress',
-                                   '🎋 Bamboo', 'Impact & Innovation'],
+    # Sub-navigation for the "Analysis " page
+    Analysis_page = st.sidebar.radio('Analysis Sections',
+                                  ['Scripts Analysis','Character Positioning Analysis', 'Guanyu role orientation and personality','Cultural symbols and images'],
                                   key='plant_nav')
+    if Analysis_page == 'Character Positioning Analysis':
+        st.header("Character Positioning Analysis of Guan Yu")
 
-    if plant_page == '🌿 Mulberry':
-        st.header('Mulberry 桑')
+        # 1. Top 20 Interactions
+        st.subheader("Top 20 Interactions with Guan Yu")
+        st.write("""
+              This “Top 20 Interactions with Guan Yu” bar chart reveals Guan Yu's role association network by counting how frequently other characters mention him in their lines.
+           - Liu Bei (380 times), Zhuge Liang (338 times), and Cao Cao (288 times) rank the top three, highlighting Guan Yu's dual core status in **the core power layer of Shu Han** (Liu Bei is his sworn brother and monarch, Zhuge Liang is his strategic partner) and **the top-tier camp of Cao Wei** (Cao Cao is a powerful enemy who appreciates him). He is a key anchor in the narrative of Shu Han's regime and an important link in the military and political game between Wei and Shu in the Three Kingdoms period.
+           - The high-frequency mentions of generals like Zhang Liao and Huang Zhong (both over 70 times) reflect Guan Yu's influence as a “benchmark general” among military colleagues and opponents. His military achievements and decisions are the focus of military narratives from all parties.
+           - The mentions of Ma Tong, Zhou Cang, and Guan Ping (relatives/attendants) show the multi-dimensionality of Guan Yu's role—he is not only a battlefield hero but also a leader with family ties and followers. The existence of his personal team strengthens the daily-life support for his image of “unparalleled loyalty”.""")
+        st.image("image/Character/output1.png")
+
+        # 2. Aliases vs Roles Bubble Chart
+        st.subheader("Bubble Chart of Guan Yu’s Aliases vs Top 20 Roles")
+        st.write("""
+              This “Bubble Chart of Guan Yu’s Aliases vs Top 20 Roles” reveals the intimacy of role relationships and differences in identity cognition by counting the frequency of different characters addressing Guan Yu by his aliases.
+             - **Kinship/Core Group Dimension**: The alias “Er Di (Second Brother)” appears frequently in the lines of Liu Bei and Zhuge Liang, reflecting the intimate address within Shu Han’s core circle (sworn brothers and strategic partners) and highlighting Guan Yu’s dual identity as “brother + general” in Shu Han’s power structure. “Yun Chang” and “Guan Mou” are frequently used by characters like Liu Bei and Cao Cao, serving as formal or self-referential addresses among acquaintances or opponents, reflecting Guan Yu’s identity switching in personal relationships and military games.
+             - **Honorific Dimension**: The occasional mentions of “Guan Jiangjun (General Guan)” and “Guan Gong” reflect the recognition of his military identity by the Cao Wei and Eastern Wu camps, which are honorific titles based on his military reputation. The use of “Hanshou Tinghou” is associated with his official title, reflecting the importance some characters attach to his political identity.
+             - **Cultural Symbol Dimension**: The distribution of different aliases also reflects the diversity of Guan Yu’s image—he is both “Er Di” and “Yun Chang” in Shu Han (a personified brother/general) and a military symbol respected as “Jiangjun” and “Gong” by all parties in the Three Kingdoms context. His alias system is a composite mirror of role relationships and social identities.""")
+        st.image("image/Character/output2.png")
+
+        # 3. Aliases vs Camps Bubble Chart
+        st.subheader("Aliases in Different Camps")
+        st.write("""
+              This bubble chart “Frequency of Guan Yu’s Appellations in the Camps of Wei, Shu, Wu, and Other Warlords” reveals the differences in role relationships and identity cognition between various camps and Guan Yu through the frequency of using his aliases in different camps.
+             - **Shu Camp**: The prominent bubbles of “Er Di (Second Brother)” and “Yun Chang” reflect the intimate addresses from core members like Liu Bei and Zhang Fei to Guan Yu, representing the emotional and identity binding in the sworn brotherhood and the core circle of Shu Han, highlighting his dual role as “family member + core general” in Shu Han.
+             - **Wei Camp**: The high frequency of formal appellations such as “General Guan” and “Guan Yun Chang” reflects that the Wei camp regards Guan Yu as a military opponent, using official and formal addresses to reflect the recognition of his general identity and the identity definition in the game.
+             - **Wu and Other Warlords Camps**: The distribution of appellations like “Guan Gong” and “Hanshou Tinghou” reflects the attention to Guan Yu’s military reputation and political identity, which is the external cognition of his identity as “famous general + feudal lord” under the game pattern of the Three Kingdoms.""")
+        st.image("image/Character/output3.jpg")
+
+        # 4. Interaction Network
+        st.subheader("Guan Yu Interaction Network Diagram")
+        st.write("""
+              This “Guan Yu Interaction Network Diagram” takes Guan Yu as the core, intuitively presenting his complex role relationship network.
+            1. Core Circle: Nodes like Liu Bei, Zhang Fei, and Zhuge Liang have thick edges and prominent nodes with Guan Yu, reflecting the deep binding of the core group of Shu Han. Their intimate interactions as sworn brothers, monarch and minister, and partners form the foundation of Guan Yu’s image of “unparalleled loyalty” and “loyalty to the monarch”.
+             2. Military Opponent Circle: Nodes such as Cao Cao, Zhang Liao, and Pang De and their edges with Guan Yu reflect military games, which are key interactions in the military conflict between Wei and Shu in the Three Kingdoms period, highlighting Guan Yu’s core position as a general on the battlefield.
+            3. Peripheral Association Circle: Although peripheral nodes like grooms and garrison soldiers have low interaction frequency, they complement the multiple facets of Guan Yu’s life and battlefield as a “person”, showing that he is not only a hero but also in the interaction network of ordinary roles.""")
+        st.image("image/Character/output4.png")
+
+        # 5. Word Clouds of Four Camps
+        st.subheader("Word Clouds of Four Camps")
+        st.write("""
+              This “Word Cloud of Four Camps” reveals the role cognition and relationship logic of Guan Yu in different camps through the visual differences of keyword frequencies.
+           - **Shu Camp**: Keywords such as “Di (Brother)”, “Mei (Beautiful)”, “Cao Cao”, and “Taoyuan” are prominent. “Di” reflects the brotherhood in the core circle of Shu Han, “Taoyuan” is associated with the sworn brotherhood foundation, and “Cao Cao” is the main military opponent. It reflects that Guan Yu has the dual roles of “brother-general” and “anti-Wei vanguard” in Shu Han, and his image is deeply bound to the emotional ties and strategic confrontation of Shu Han.
+           - **Wei Camp**: Keywords such as “Yun Chang”, “Guan Gong”, “General”, and “Yan Liang” are significant. “Yun Chang” and “Guan Gong” are honorific titles for his general identity, “Yan Liang” is associated with his classic battle achievement, and “Prime Minister (Cao Cao)” reflects the Wei camp’s attention to military games with him. It shows that the Wei camp regards Guan Yu as a powerful military opponent, and its cognition focuses on his military value and military interaction between Wei and Shu.
+           - **Wu Camp**: Keywords such as “Guan Gong”, “Jingzhou”, “Cao Cao”, and “Lu Meng” are prominent. “Jingzhou” is the focus of geopolitical competition, and “Lu Meng” is a key figure in Dong Wu’s game. It reflects that Guan Yu is recognized as “the core opponent in Jingzhou game” in the Wu camp, and his role is associated with Dong Wu’s geopolitical strategy and military checks and balances.
+           - **Other Warlords Camp**: Keywords such as “Yun Chang”, “Liu Bei”, “Taoyuan”, and “Hua Xiong” are dominant. “Hua Xiong” is a symbol of his early famous battle, and “Liu Bei” and “Taoyuan” are his identity background. It shows that the cognition of Guan Yu in other warlords camp tends to be “early famous general + Shu Han symbol”, which is a symbolic cognition based on pan-military narrative and identity labels.""")
+        st.image("image/Character/output5.png")
+
+        # 6. Line Chart of Top 10 High-Frequency Words
+        st.subheader("Top 10 High-Frequency Words in Four Camps")
+        st.write("""
+           This “Line Chart with Area Fill for Top 10 High-Frequency Words in Four Camps” reveals the differences in role cognition and relationships of Guan Yu among various camps through the distribution of high-frequency vocabulary mentioning Guan Yu in different camps.
+           - **Shu Camp**: High-frequency words such as “Mou Jia (I)”, “Er Di (Second Brother)”, and “San Di (Third Brother)” are prominent, reflecting the intimate addresses from the core circle of Shu Han (Liu Bei, Zhang Fei, etc.) to Guan Yu. It reflects his dual role as “sworn brother + core general of Shu Han” and is an intimate role association based on family-like emotions and regime binding.
+           - **Wei Camp**: High-frequency words such as “Yun Chang”, “Guan Gong”, and “Mei Ran (Beautiful Beard)” dominate, reflecting that the Wei camp regards Guan Yu as a famous military general and opponent. Formal and prestigious addresses highlight his identity as a general, which is a role cognition based on military games.
+           - **Wu Camp**: The high-frequency words imply geopolitical conflicts (such as the context related to Jingzhou) and military confrontation logic, reflecting that Dong Wu regards Guan Yu as an external opponent in strategic games, and the role association focuses on geopolitical competition and military checks and balances.
+           - **Other Warlords Camp**: The high-frequency words are low in frequency and scattered, reflecting that other warlords have less interaction with Guan Yu, and their cognition of him tends to be a symbolic “general” image. The role association is weak, mostly based on rumors or generalized military symbol cognition.""")
+        st.image("image/Character/output6.png")
+
+        # 7. Guan Yu Mentions Other Generals
+        st.subheader("Generals Mentioned in Guan Yu’s Lines (Top 15)")
+        st.write("""
+           This “Line Chart with Area Fill of Other Generals Mentioned in Guan Yu’s Lines (Top 15)” reveals Guan Yu’s role focus and relationship network through the frequency of his active mentions of other generals.
+          - **Core Strategic Circle of Shu Han**: Zhuge Liang (over 300 times) and Liu Bei (250 times) rank in the top two, reflecting Guan Yu’s dual core attention to Shu Han’s “strategic advisor” and “monarch brother”. It directly embodies his role positioning of “loyalty to the monarch and assistance in governance + brotherly coordination”, reflecting his interactive logic of coordinating strategic decisions with military actions and supporting political stability with brotherly friendship in the Shu Han regime.
+          - **Core Military Opponents in Game**: The high-frequency mentions of Cao Cao (over 130 times) and Zhang Liao (50 times) highlight Guan Yu’s military attention to the top-tier camp of Cao Wei (leader + key general) as a general. It is a microcosm of the “general vs. general, general vs. lord” game pattern in the military conflict between Wei and Shu, embodying the focal association of his general identity in military confrontation.
+          - **Personal Force and Subordinate Circle**: The mentions of Ma Tong, Guan Ping, Zhou Cang, etc., show Guan Yu’s management and dependence on his personal team as a general, which is an extension of his “battlefield leader” identity in daily life, reflecting his command and trust relationship with subordinates in military operations.""")
+        st.image("image/Character/output7.png")
+
+        # 8. Guan Yu’s Words to Liu Bei, Zhang Fei, Zhuge Liang
+        st.subheader("High-Frequency Words in Guan Yu’s Lines to Liu Bei, Zhang Fei, Zhuge Liang")
+        st.write("""
+           This “Line Chart with Area Fill for Top 10 High-Frequency Words in Four Camps” reveals the role cognition and relationship logic of Guan Yu in different camps through the distribution of high-frequency vocabulary mentioning Guan Yu.
+          - **Shu Camp**: High-frequency words such as “Guan Mou (I)”, “Er Di (Second Brother)”, “San Di (Third Brother)”, and “Cao Cao” are prominent. “Guan Mou” reflects Guan Yu’s self-identity in Shu Han; “Er Di” and “San Di” are intimate addresses from core members like Liu Bei and Zhang Fei, highlighting the emotional binding of the sworn brotherhood circle in Shu Han; “Cao Cao” as the main military opponent indicates Guan Yu’s role as an “anti-Wei vanguard” from the perspective of Shu Han, whose image deeply integrates the emotional ties and strategic confrontation of Shu Han.
+          - **Wei Camp**: High-frequency words such as “Yun Chang”, “Guan Gong”, “Lao Fu (Old Man)”, and “Cheng Xiang (Prime Minister)” are significant. “Yun Chang” and “Guan Gong” are honorific titles for his general identity, reflecting the Wei camp’s recognition of his military value; the high-frequency mention of “Cheng Xiang (Cao Cao)” reflects that the Wei camp regards Guan Yu as a core military opponent, with cognition focusing on the confrontation in the military game between Wei and Shu.
+          - **Wu Camp**: High-frequency words such as “Guan Gong”, “Jingzhou”, “Cao Cao”, and “Zhu Gong (Lord)” are prominent. “Jingzhou” is the focus of geopolitical competition between Wu and Shu, and the mention of “Guan Gong” is deeply bound to the Jingzhou game, reflecting that Dong Wu regards Guan Yu as a key opponent in geopolitical strategy, whose role is associated with Dong Wu’s political ambition and military checks and balances.
+          - **Other Warlords Camp**: High-frequency words such as “Liu Bei”, “Zu Fu (Grandfather)”, and “Guan Yun Chang” are low in frequency and scattered. “Liu Bei” and “Zu Fu” reflect the other warlords’ cognition of Guan Yu’s background as “Shu Han general + family identity”; “Guan Yun Chang” is a generalized general symbol, indicating that the other warlords’ cognition of Guan Yu tends to be an early famous general label, with less interaction and symbolic characteristics.""")
+        st.image("image/Character/output8.png")
+    elif Analysis_page == 'Cultural symbols and images':
+        st.header('Cultural symbols and images')
+        symbol_cover_photo_path = "./image/1.PNG"
+        st.image(symbol_cover_photo_path, width=500)
+
+        st.subheader(
+            "In Peking Opera, Guan Yu\'s cultural symbols form a rigorous and self-consistent system: Core symbols define who he is (忠义勇武).\n Secondary symbols specifically demonstrate how he upheld these virtues through stories, objects, and titles.\n Derived imagery, through poetic rendering, tells the audience the aesthetic and spiritual heights reached by his loyalty, righteousness, courage, and martial prowess.\n Loyalty, Righteousness, Courage, and Martial Prowess are the four pillars of Guan Yu\'s cultural symbol, underpinning all his stories and imagery.")
+
+        st.subheader('1. 忠 Loyalty ')
         st.write(
-            '''Mulberry is one of the earliest cultivated tree species in China, and it is also the most common plant near private houses in ancient times. The word "桑梓" has become a substitute for hometown. Mulberry trees have a wide range of uses: the leaves can be used to feed silkworms, while the fruit is sweet and edible, which can satisfy hunger and make into wine; The bark has been a famous medicine since ancient times, it can even be used to make bow, gricultural tools, utensils, chariots, etc. The line “十亩之间兮，桑者闲闲兮” shows the scene of a peasant woman happily picking mulberries, reflecting the praise of hardworking life.''')
-
-        st.subheader('Symbolic Poems Associated with the Plant')
-        poems = [
-            ("《豳风·七月》",
-             '''- “女执懿筐，遵彼微行，爰求柔桑。”\n- “七月流火，九月授衣。春日载阳，有鸣仓庚。女执懿筐，遵彼微行，爰求柔桑。'''),
-            ("《氓》",
-             '''- “氓之蚩蚩，抱布贸丝。匪来贸丝，来即我谋。”\n- “桑之未落，其叶沃若。于嗟鸠兮！无食桑葚。于嗟女兮！无与士耽。'''),
-            ("《小雅·隰桑》",
-             '''- “隰桑有阿，其叶有难。既见君子，其乐如何！”\n- “隰桑有阿，其叶有沃。既见君子，云何不乐！”\n- “隰桑有阿，其叶有幽。既见君子，德音孔胶。'''),
-            ("《魏风·十亩之间》", '''- “十亩之间兮，桑者闲闲兮。行与子还兮。”\n- “十亩之外兮，桑者泄泄兮。行与子逝兮。'''),
-            ("《鄘风·桑中》", "爰采唐矣？沬之乡矣。云谁之思？美孟姜矣。期我乎桑中，要我乎上宫，送我乎淇之上矣。"),
-        ]
-
-        # 创建多列
-        cols = st.columns(5)  # 根据需要调整列数
-
-        for col, (title, content) in zip(cols, poems):
-            with col:
-                # 使用更小号的标题字体
-                st.markdown(f"<h4 style='text-align: center; font-size:18px;'>{title}</h4>", unsafe_allow_html=True)
-                st.write(content)
-
-        st.subheader('1. Seasonal connections ')
-        tabs = st.tabs(["Statistical Results", "Agriculture", "Love"])
-        contents = [
-            "By screening the poems related to ‘桑 (mulberry)’ in the Book of Songs and the time elements contained in them, the results show that among the 36 occurrences of ‘桑’, 18 are in ‘spring’, 3 in ‘autumn’, and 2 include the flow of the three seasons ‘spring, summer, and autumn’, while the remaining 13 do not clearly reflect the seasonal characteristics. The results show that of the 36 occurrences of ‘桑’, 18 are in ‘spring’, 3 are in ‘autumn’, and 2 include the flow of the three seasons of ‘spring, summer, and autumn’, while the remaining 13 do not clearly reflect seasonal characteristics. From this we can see that in terms of seasons, ‘mulberry’ is more often associated with spring, followed by autumn, which may be related to the themes expressed in these verses, the two most prominent of which are agriculture and love, which are also two important themes of the Book of Songs.<br>In addition to this, related to time are the date and hour. Among these 36 occurrences, only one poem, ‘國風·豳風·七月’, mentions a specific month, from July to September, reflecting a detailed record of the months of agricultural activities in ancient societies. As for the hour, none of the verses explicitly mentions the hour, probably because these verses focus more on describing agricultural activities or emotional expressions than on specific points in time. It can be seen that compared to the relationship between ‘mulberry’ and the season, other time factors can hardly be taken into consideration.",
-            "As far as farming is concerned, the two seasons of spring and autumn are crucial, one for sowing and the other for harvesting. Most of the poems related to ‘桑’ focus on spring, which is consistent with the fact that spring was the beginning of agricultural activities in ancient agricultural societies. Mulberry trees, as an important cash crop, and their young leaves were food for silkworms, so there were frequent activities of mulberry harvesting in spring. In addition, agricultural activities would also reflect seasonal changes. For example, the poem ‘國風·豳風·七月’ covers agricultural activities in all seasons of the year, from sowing in the spring to growing in the summer to harvesting in the autumn and preparing for the winter, which reflects the ancient agricultural society's reliance on and adaptation to seasonal changes. In the spring, the poem mentions ‘春日載陽’, indicating the arrival of spring, when agricultural activities, such as mulberry picking, begin. In the summer, the poem ‘七月流火’ implies the heat of summer, and ‘八月萑葦’ indicates the summer reeds. In autumn, the poem ‘八月其獲’ suggests that autumn is the season of harvesting. In winter, the poem ‘二之日鑿冰衝衝’ indicates that ice is chiselled in winter and used for preserving food.",
-            "In the case of love, it is also tied to the seasons. In spring, there is an activity closely related to ‘桑’, namely ‘采桑 (picking mulberry)’. In the time of the Book of Songs, ‘采桑’ did not only represent agricultural activities, but was also a place for the expression of emotions and love between a man and a woman, as the activity of picking mulberry created an opportunity for young men and women to meet and get to know each other. The fact that most of these poems focus on spring reflects the importance of the mulberry tree in the economy and culture of ancient societies. The mulberry tree was not only a cash crop, but also a carrier of emotional and political allegories, such as a place for love between men and women and a praise for hard work."
-        ]
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.write(content, unsafe_allow_html=True)
-
-        st.subheader('2. Emotional associations')
-        tabs = st.tabs(["Love and Marriage", "Diligent Living", "Homesick and Longing", "Politics"])
-        contents = [
-            '''《鄘风·桑中》, “期我乎桑中，要我乎上宫，送我乎淇之上矣”<br>Mulberry is often associated with love between men and women. In this poem, it depicts the meeting of young men and women in the Mulberry Forest, where mulberry has become a place for men and women to meet, and the tenderness and luxuriantness of the “桑树” shows the happiness and joy of the Mulberry picker and the gentleman. The tenderness and luxuriantness of the mulberry trees show the happiness and joy of the woman picking the mulberry tree when she meets with the gentleman, and expresses her joy and yearning for love.''',
-            '''《卫风·氓》:“桑之未落，其叶沃若。于嗟鸠兮，无食桑葚！于嗟女兮，无与士耽！士之耽兮，犹可说也。女之耽兮，不可说也。桑之落矣，其黄而陨。自我徂尔，三岁食贫。”<br>Here, the growing state of the mulberry tree is both a metaphor for the changes in sweet love, showing the woman's desire for love and her grief over the misfortune of marriage, and also a symbol of liveliness. In the first section:"The mulberry has not fallen, and its leaves are fertile", Mulberry is a metaphor for the harmony of the newlyweds with the growth and prosperity of the mulberry leaves; while the scene of the mulberry leaves withering and turning yellow to the ground is a metaphor for the misery of time and the change of lover's heart.<br>Here, the growing state of the mulberry tree is both a metaphor for the changes in sweet love, showing the woman's desire for love and her grief over the misfortune of marriage, and also a symbol of liveliness. In the first section:"The mulberry has not fallen, and its leaves are fertile", Mulberry is a metaphor for the harmony of the newlyweds with the growth and prosperity of the mulberry leaves; while the scene of the mulberry leaves withering and turning yellow to the ground is a metaphor for the misery of time and the change of lover's heart.''',
-            '''In some poems, mulberry is also associated with homesickness and nostalgia. For example, the verse “蜎蜎者蠋，烝在桑野” expresses the sadness of soldiers who do not return from an expedition and who miss their homes.''',
-            '''“迨天之未阴雨，彻彼桑土，绸缪牖户”<br>The verse conveys, through the image of the mulberry, a political message of diligence and self-reliance, of saving for a rainy day, and of preventive preparations to protect one's homeland.'''
-        ]
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.write(content, unsafe_allow_html=True)
-
-        st.subheader('3. Human qualities')
-        st.write('''
-            《小雅·隰桑》
-
-            隰桑有阿，其叶有难。既见君子，其乐如何！
-
-            隰桑有阿，其叶有沃。既见君子，云何不乐！
-
-            隰桑有阿，其叶有幽。既见君子，德音孔胶。
-            ''')
-
-        st.image('https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/8.png?raw=true', width=300)
-
-        tabs = st.tabs(["The purity and boldness of emotions", "Admiration and pursuit of morality for gentlemen"])
-        contents = [
-            "The emotional expression in the poem is pure and bold, direct and passionate, reflecting the poet's frank attitude and brave pursuit of love. In personal qualities, this frankness and courage are commendable, as they reflect one's sincerity and steadfastness",
-            '''The term '君子' in the poem is not only a title for the beloved, but also implies an appreciation for their character. In ancient times, the term '君子' was often used to refer to a person of moral character. Therefore, the admiration for a "gentleman" is not only an admiration for oneself, but also a pursuit and longing for noble character'''
-        ]
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.write(content)
-
-
-    elif plant_page == '🍂 Kudzu':
-        st.header('Kudzu 葛')
-        st.write('''
-                Before cotton was imported to China, Gebu was the fabric to make summer clothing. Here, the poem describes the size and strength of the kudzu vine and what it could be used for: kudzu grows long and strong, spreading all over the hills and valleys, with dense and lush leaves. Harvested and boiled, the fibers are stripped into fine threads to weave into kudzu cloth, wearing kudzu garments is truly comfortable!
-
-                《周南·葛覃》:“葛之覃兮，施于中谷，维叶莫莫。是刈是濩，为絺为綌，服之无斁。”
-                ''')
-
-        st.subheader('Symbolic Poems Associated with the Plant')
-        poems = [
-            ("《王风·采葛》",
-             '''- “彼采葛兮，一日不见，如三月兮。”\n- “彼采萧兮，一日不见，如三秋兮。”\n- “彼采艾兮，一日不见，如三岁兮。'''),
-            ("《周南·葛覃》",
-             '''- “葛之覃兮，施于中谷，维叶萋萋。”\n- “葛之覃兮，施于中谷，维叶莫莫。”\n- “是刈是濩，为絺为綌，服之无斁。'''),
-            ("《唐风·葛生》",
-             '''- “葛生蒙楚，蔹蔓于野。”\n- “葛生蒙棘，蔹蔓于域。”\n- “角枕粲兮，锦衾烂兮。'''),
-            ("《邶风·旄丘》",
-             '''  - “旄丘之葛兮，何诞之节兮。”\n  - “叔兮伯兮，何多日也？何其处也？必有与也！”\n  - “何其久也？必有以也！”'''),
-            ("《王风·葛藟》", '''  - “绵绵葛藟，在河之浒。”\n  - “终远兄弟，谓他人父。”\n  - “谓他人父，亦莫我顾。”'''),
-        ]
-
-        # 创建多列
-        cols = st.columns(5)  # 根据需要调整列数
-
-        for col, (title, content) in zip(cols, poems):
-            with col:
-                # 使用更小号的标题字体
-                st.markdown(f"<h4 style='text-align: center; font-size:18px;'>{title}</h4>", unsafe_allow_html=True)
-                st.write(content)
-
-        st.subheader('1. Seasonal connections ')
-        tabs = st.tabs(["Statistical Results", "Symbolism"])
-        contents = [
-            '''By screening the poems related to ‘葛 (Kudze)’ in The Book of Songs and the time elements contained in them, the results show that among the 16 occurrences of ‘葛’, 5 are in ‘spring’, 4 in ‘autumn’, 3 in ‘winter’, 1 in ‘summer’, and the remaining 3 do not clearly reflect the seasonal characteristics. The results show that of the 16 occurrences of ‘葛’, 5 are in ‘spring’, 4 in ‘autumn’, 3 in ‘winter’, 1 in ‘summer’, and the remaining 3 do not clearly reflect the seasonal characteristics. Thus, in terms of seasons, ‘葛’ is more often associated with spring, followed by autumn and winter, and also with summer. This has something to do with the characteristics of ‘葛’ itself. In Shuowen Jiezi (說文解字), ‘葛’ means ‘grass’, which can grow all year round as long as the environment allows. At the same time, the fibres of ‘葛’ can be woven into cloth, which is closely related to clothes. Therefore, words related to wearing clothes appear several times in the poem, such as ‘葛屢 (grass shoes)’ three times, i.e., ‘葛屨五兩，冠緌雙止’ (國風·齊風·南山) , ‘糾糾葛屨，可以履霜’ (小雅·小旻之什·大東).<br>Specifically, spring is the most frequently mentioned season in these poems, with a total of five poems related to spring. Most of these poems depict the growth and gathering of kudzu, such as the description of the luxuriant growth of kudzu in the valley in ‘國風·周南·葛覃’ and the expression of longing for the kudzu gatherers in ‘國風·鄭風·采葛’. There are three poems related to autumn, such as ‘國風·邶風·旄丘’ and ‘國風·王風·葛藟’, in which most of the verses express thoughts of distant relatives and feelings about fate. Three poems are related to winter, such as ‘國風·齊風·南山’ and ‘小雅·小旻之什·大東’. The image of kudzu in these verses is mostly associated with cold frosts, symbolising resilience and vitality. One poem is associated with summer, namely ‘國風·魏風·葛屨’, which describes the use of kudzu shoes to tread on frost, reflecting the use of kudzu products in summer.\nApart from this, there is no explicit reference to a specific month in the verses, so the distribution of months cannot be analysed in detail. The verses also do not mention the specific hour, so the distribution of the hour cannot be analysed. However, from the content of the verses, most of them are related to daily work and life, which may coincide with the farming life of working at sunrise and resting at sunset.''',
-            '''‘葛’ is not only a plant in nature in these verses, but also carries a rich symbolic meaning. It is not only a symbol of life force, but also a carrier of thoughts and emotions. The growth, collection and use of kudzu in the verses are closely related to people's daily life, reflecting the ancient people's lifestyle of living in harmony with nature. Whether it is the longing for loved ones, the feeling of fate or the desire for a better life, kudzu grass has become an important medium for the poet to express his emotions. To sum up, these verses not only depict the growth of kudzu grass in different seasons, but also reflect the ancient people's delicate observation and deep perception of natural landscape, as well as the important position of kudzu grass in ancient social life.''',
-        ]
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.write(content, unsafe_allow_html=True)
-
-        st.subheader('2. Emotional associations')
-        tabs = st.tabs(["Diligent Living", "Thoughts of Longing", "Filial piety (归宁孝道)", "Mourning",
-                        "Estrangement of Relatives"])
-        contents = [
-            '''《周南·葛覃》:“葛之覃兮，施于中谷，维叶萋萋。是刈是濩，为絺为。”<br>Kudzu is often associated with women's hard work and family life. This poem describes the growth of Kudzu and the labor of women, showing women harvesting kudzu vines, cooking the fibers, and weaving them into cloth, reflecting praise for hard work and women's contribution to the family.''',
-            '''《王风·采葛》,:“彼采葛兮，一日不见，如三月兮！”<br>This poem expresses the deep longing for the woman who picks kudzu, and the fact that one day's absence is like three autumns, showing the intensity of the emotion and the longing for the beloved through the exaggerated sense of time. Here the word “kudzu” is used as a starting point, which actually comes from the daily life of production and is used as a starting point.''',
-            '''《周南·葛覃》, “言告师氏，言告言归。薄污我私，薄澣我衣。害澣害否？归宁父母。”<br>Here, a woman is preparing to go home to visit her parents after laboring, reflecting filial piety and the importance of family.''',
-            '''《唐风·葛生》, “葛生蒙楚，蔹蔓于野。予美亡此，谁与独处？”<br>Through the scene that the kudzu vine is left untended and wild to express the pain of mourning for the female lover, the worst result of planting kudzu is used as a metaphor for the sadness and misfortune of losing a lover.''',
-            '''《王风·葛藟》中，“绵绵葛藟，在河之浒。终远兄弟，谓他人父。”<br>Here, the poem describes a scene where the growth pattern of the kudzu vine branches out without being able to support each other. It is a metaphor for the estrangement and strangeness between members of the kinship.'''
-        ]
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.write(content, unsafe_allow_html=True)
-
-        st.subheader('3. Human qualities')
-        st.write('''
-                    《周南·葛覃》
-
-                    葛之覃兮，施于中谷，维叶萋萋。黄鸟于飞，集于灌木，其鸣喈喈。
-
-                    葛之覃兮，施于中谷，维叶莫莫。是刈是濩，为絺为綌，服之无斁。
-
-                    言告师氏，言告言归。薄污我私，薄澣我衣。害澣害否？归宁父母。
-                    ''')
-
-        st.image('https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/9.png?raw=true', width=300)
-
-        tabs = st.tabs(["Diligence", "Filial Piety", "Sense of Responsibility"])
-        contents = [
-            "The woman in the poem not only collects kudzu vines, but also personally weaves and makes clothes, which reflects the diligent qualities of ancient women. They not only had to participate in field work, but also be responsible for the textile work at home. This diligent spirit was an expectation and requirement of society for women at that time.",
-            "The poem mentions a woman preparing to wash her clothes in order to visit her parents at home, which demonstrates her filial piety towards her parents. In the social context of that time, women still had to visit their parents' homes regularly after getting married to show respect and care for their parents.",
-            "While preparing to return to her mother's home, the woman did not forget to seek advice from Shi, which shows her emphasis on family responsibilities. She not only has to take care of her own family, but also cares about the health of her parents, and this sense of responsibility is an important component of her personal qualities."
-        ]
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.write(content)
-
-
-    elif plant_page == '🌾 Millet':
-        st.header('🌾 Millet 黍')
-        st.write('''
-                        While millet is no longer the staple food of modern people, in the northern regions of China, glutinous millet, especially the sticky variety, is a high-quality glutinous food that can be used to make a variety of pastries and festive foods. When Qu Yuan died of drowning in the river, the people of Chu used millet to make zongzi as an offering in his honor. 
-
-                        This section describes the season of harvest, where the grains and millets pile high in heaps, which is the greatest reward for a year's worth of hard work. This further highlights millet being very popular in accient china especially during The Spring and Autumn Period.
-
-                        《周颂·丰年》: "丰年多黍多稌, 亦有高廪,万亿及秭。"
-
-                        ''')
-
-        st.subheader('Symbolic Poems Associated with the Plant')
-        poems = [
-            ("《王风·黍离》",
-             '''- 彼黍离离，彼稷之苗。行迈靡靡，中心摇摇。\n- 彼黍离离，彼稷之穗。行迈靡靡，中心如醉。\n- 彼黍离离，彼稷之实。行迈靡靡，中心如噎。'''),
-            ("《硕鼠》",
-             '''- 硕鼠硕鼠，无食我黍！三岁贯女，莫我肯顾。逝将去女，适彼乐土。乐土乐土，爰得我所。\n- 硕鼠硕鼠，无食我麦！三岁贯女，莫我肯德。逝将去女，适彼乐国。乐国乐国，爰得我直。\n- 硕鼠硕鼠，无食我苗！三岁贯女，莫我肯劳。逝将去女，适彼乐郊。乐郊乐郊，谁之永号？'''),
-            ("《黍苗》",
-             '''- 芃芃黍苗，阴雨膏之。\n- 悠悠南行，召伯劳之。\n- 我任我辇，我车我牛。\n- 我行既集，盖云归哉。'''),
-            ("《七月》",
-             '''- 六月食郁及薁，七月亨葵及菽，八月剥枣，十月获稻，为此春酒，以介眉寿。七月食瓜，八月断壶，九月叔苴，采荼薪樗，食我农夫。\n- 九月筑场圃，十月纳禾稼。黍稷重穋，禾麻菽麦。嗟我农夫，我稼既同，上入执宫功。昼尔于茅，宵尔索綯。亟其乘屋，其始播百谷。'''),
-            ("《小雅·甫田》",
-             '''- 倬彼甫田，岁取十千。我取其陈，食我农人。自古有年。今适南亩，或耘或耔。黍稷薿薿，攸介攸止，烝我髦士。\n- 以我齐明，与我牺羊，以社以方。我田既臧，农夫之庆。琴瑟击鼓，以御田祖。以祈甘雨，以介我稷黍，以穀我士女。'''),
-        ]
-
-        # 创建多列
-        cols = st.columns(5)  # 根据需要调整列数
-
-        for col, (title, content) in zip(cols, poems):
-            with col:
-                # 使用更小号的标题字体
-                st.markdown(f"<h4 style='text-align: center; font-size:18px;'>{title}</h4>", unsafe_allow_html=True)
-                st.write(content)
-
-        st.subheader('1. Seasonal connections ')
-        tabs = st.tabs(["Statistical Results", "Nature and Human Activities"])
-        contents = [
-            '''By screening the poems related to ‘黍 (Millet)’ in The Book of Songs and the time elements contained in them, the results show that among the 23 occurrences of ‘黍’, 6 are in ‘autumn’, 5 are in ‘spring’, 4 are in ‘spring and autumn’ together, and 1 is in ‘spring, autumn and winter’ together, while the remaining 7 do not clearly reflect the seasonal characteristics. The results show that of the 16 occurrences of ‘Ge’, 6 are in ‘autumn’, 5 in ‘spring’, 4 in ‘spring and autumn’, 1 in ‘spring, autumn and winter’, and the remaining 7 do not clearly reflect seasonal characteristics. The remaining seven poems do not clearly reflect the seasonal characteristics. It can be seen that ‘黍’ mainly appears in the spring and autumn seasons.''',
-            '''Specifically, there are a number of poems related to spring, such as ‘國風·曹風·下泉’, ‘小雅·北山之什·信南山’, etc. These poems depict the scenes of spring, such as the growth of millet seedlings and the nourishment of the spring rains, which reflect the agricultural activities and natural landscapes in the spring. There are also a number of poems related to autumn, such as ‘國風·王風·黍離’ and ‘國風·豳風·七月’, etc. These verses describe the harvest scenes in autumn, such as the ripening and harvesting of millet and grains, reflecting the agricultural labour and the joy of harvesting in autumn. One poem is related to winter, such as ‘小雅·北山之什·信南山’, in which the poem expresses the coldness of winter and the longing for warmth through the metaphor of millet. Some verses relate to more than one season, such as ‘小雅·北山之什·莆田’, which describes agricultural activities from spring to autumn, showing the farming cycle of the four seasons of the year.<br>  These verses focus on the farming activities of ancient agricultural societies, such as sowing, harvesting, and storage, which are closely related to seasonal changes, reflecting the ancient people's adherence to and use of the laws of nature. The verses not only describe farming activities, but also express thoughts of home and relatives and worries about the fate of the country. Through the description of crops such as millet and grain, these poems show the economic basis of ancient society and the living conditions of the people. '''
-        ]
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.markdown(content, unsafe_allow_html=True)
-
-        st.subheader('2. Emotional associations')
-        tabs = st.tabs(
-            ["The pain of a fallen country and the mourning of the deceased country", "Hate the Exploitation"])
-        contents = [
-            '''《诗经·王风·黍离》:“彼黍离离，彼稷之苗”<br>This poem expressed by the poet passing the ruins of the former capital of the 宗周, seeing the past prosperous capital city sorghum, millet grows very lush, causing infinite sadness. The poet expresses the country's former prosperity and present decline of the feelings of sadness of deplorable. This kind of emotion is called “黍离之悲”, which unites the pathos of losing one's homeland and having nothing to do with it.''',
-            '''《魏风·硕鼠》, “硕鼠硕鼠，无食我黍！"<br>This verse expresses the laborers' hatred for the insatiable exploiters and their desire for a better life. Millet is compared to the fruit of the laborers' work, denouncing the exploiters for their greediness and cunningness, and for their lack of consideration for other people's lives and deaths. In other chapters of the Book, Millet also symbolizes the fruits of labor, such as “不能蓺稷黍” in 《唐风·鸨羽》, which expresses the helplessness of not being able to go home to cultivate Jigen and Millet due to the endless compulsory labor of the princes' and lords' families.'''
-        ]
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.markdown(content, unsafe_allow_html=True)
-
-        st.subheader('3. Human qualities')
-        st.write('''
-                            《小雅·甫田》
-
-                            倬彼甫田，岁取十千。我取其陈，食我农人。自古有年。今适南亩，或耘或耔。黍稷薿薿，攸介攸止，烝我髦士。
-
-                            以我齐明，与我牺羊，以社以方。我田既臧，农夫之庆。琴瑟击鼓，以御田祖。以祈甘雨，以介我稷黍，以穀我士女。
-
-                            曾孙来止，以其妇子。馌彼南亩，田畯至喜。攘其左右，尝其旨否。禾易长亩，终善且有。曾孙不怒，农夫克敏。
-
-                            曾孙之稼，如茨如梁。曾孙之庾，如坻如京。乃求千斯仓，乃求万斯箱。黍稷稻粱，农夫之庆。报以介福，万寿无疆。
-                            ''')
-
-        st.image('https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/7.png?raw=true', width=300)
-
-        tabs = st.tabs(["Concern for the Nation's Fate", "Diligence and Harvest"])
-        contents = [
-            '''The terms "millet" and "millet" in "Shuli" are not just crops. The growth status of millet in the poem reflects the poet's deep concern for the rise and fall of the country and his sense of responsibility in personal qualities. When facing the ruins of his homeland, the poet feels deeply worried and helpless. At the same time, the poem "Those who know me, call my heart worried; those who don't know me, call me what I want" expresses the poet's profound understanding of understanding and misunderstanding, as well as the feeling of difficulty in finding a kindred spirit. This reflects the poet's emphasis on understanding and communication in interpersonal relationships, and is also a virtue in personal qualities.''',
-            '''"Shuo" in the Book of Songs symbolizes both diligence and harvest, reflecting people's pursuit of hard work, wealth, and a better life. For example, in 《小雅·甫田》, "The crops of great grandchildren are like grains and beams. The crops of great grandchildren are like grains and beams. The jade of great grandchildren are like earth and the capital. They seek a thousand grain granaries and ten thousand grain boxes. The harvest of millet, grains, rice, and beams is a celebration for farmers" describes how great grandchildren obtained abundant crops through diligent farming, reflecting the virtue of hard work and wealth.'''
-        ]
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.markdown(content, unsafe_allow_html=True)
-
-
-    elif plant_page == '🍃 Grass':
-
-        st.header('🍃 Grass 蔓草/野草')
-
-        st.subheader('Symbolic Poems Associated with the Plant')
-        poems = [
-            ("《伯兮》",
-             '''- 伯兮朅兮，邦之桀兮。伯也执殳，为王前驱。\n- 自伯之东，首如飞蓬。岂无膏沐？谁适为容！\n- 其雨其雨，杲杲出日。愿言思伯，甘心首疾。\n- 焉得谖草？言树之背。愿言思伯。使我心痗。'''),
-            ("《郑风·野有蔓草》",
-             '''- “野有蔓草，零露漙兮。有美一人，清扬婉兮。邂逅相遇，适我愿兮。”\n- “野有蔓草，零露瀼瀼。有美一人，婉如清扬。邂逅相遇，与子偕臧。'''),
-            ("《国风·卫风·伯兮》",
-             '''- “自伯之东，首如飞蓬。岂无膏沐，谁适为容？”\n- “焉得谖草，言树之背。愿言思伯，使我心痗。”'''),
-            ("《湛露》",
-             '''- 湛湛露斯，匪阳不晞。\n- 厌厌夜饮，不醉无归。\n- 湛湛露斯，在彼丰草。\n- 厌厌夜饮，在宗载考。'''),
-            ("《何草不黄》",
-             '''- 何草不黄？何日不行？何人不将？经营四方。\n- 何草不玄？何人不矜？哀我征夫，独为匪民。\n- 匪兕匪虎，率彼旷野。哀我征夫，朝夕不暇。\n- 有芃者狐，率彼幽草。有栈之车，行彼周道。'''),
-        ]
-
-        # 创建多列
-        cols = st.columns(5)  # 根据需要调整列数
-
-        for col, (title, content) in zip(cols, poems):
-            with col:
-                # 使用更小号的标题字体
-                st.markdown(f"<h4 style='text-align: center; font-size:18px;'>{title}</h4>", unsafe_allow_html=True)
-                st.write(content)
-
-        st.subheader('1. Seasonal connections ')
-        tabs = st.tabs(["Statistical Results", "Nature and Human Activities"])
-        contents = [
-            '''By screening the poems related to ‘草 (grass)’ in The Book of Songs and the time elements contained in them, the results show that among the 14 occurrences of ‘草’, 5 are in ‘autumn’, 4 in ‘spring’, 1 in ‘summer’, and the remaining 4 do not clearly reflect the seasonal characteristics. The results show that of the 14 occurrences of ‘grass’ in the poem, 5 are in ‘autumn’, 4 in ‘spring’, 1 in ‘summer’, and the remaining 4 do not clearly reflect the seasonal characteristics. It is clear that ‘草’ mainly appears in spring and autumn.''',
-            '''Spring features prominently in these poems, such as ‘野有蔓草、零露漙兮’, ‘野有蔓草、零露瀼瀼’ (‘國風·鄭風·野有蔓草’), and ‘喓喓草蟲、趯趯阜螽’ (‘小雅·鹿鳴之什·出車’), etc., depicting the natural scenery and emotional experience of spring, embodying the vitality and vigour of spring. Autumn is also a frequent season, such as ‘湛湛露斯，在彼豐草’ (‘小雅·白華之什·湛露’), etc. Most of these verses express the sullenness of autumn, thoughts of longing, and scenes after a good harvest. There are fewer verses in summer, but for example, ‘小雅·彤弓之什·車攻’ depicts the scene of field hunting in summer, reflecting the warmth and activity of summer.<br>These verses closely connect the natural landscape with the characters' emotions through the imagery of grass, such as the sprawling grass in spring and the joy of encountering a meeting, and the grass and insects in autumn and the thoughts of a gentleman. The imagery of grass in the verses is not only used to express personal emotions, but also reflects the social life of the time, such as farming, hunting and war. The growth and decay of grass symbolise the change of seasons and the passage of time, for example, the yellowing of grass in ‘小雅·都人士之什·何草不黃’ symbolises the coming of autumn. The vitality and decay of grass also provokes thoughts on life, morality and politics, such as the lack of lushness of grass symbolising the decline of the state in ‘大雅·蕩之什·召旻’.<br>To sum up, through the depiction of grass, these verses show the ancient poets' deep understanding and expression of nature, emotion, society and philosophy, reflecting the rich connotation and artistic charm of the Book of Songs as an important part of the treasury of classical Chinese literature.'''
-
-        ]
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.markdown(content, unsafe_allow_html=True)
-
-        st.subheader('2. Emotional associations')
-        tabs = st.tabs(["Weakness and Decay", "Longing and Sorrow", "Surprise and Joy", ])
-        contents = [
-            '''In some verses, grass is depicted as weak and withered. For example, in "《诗经·邶风·谷风》", the phrase "采葑采菲，无以下体" illustrates the image of withered grass, showing a state of weakness and fragility.''',
-            '''Grass is also associated with emotions of longing and sorrow. For instance, in The Book of Songs 《卫风·伯兮》, "焉得谖草，言树之背。愿言思伯，使我心痗。", "谖草," also known as the forget-me-not or daylily, symbolizes the desire to forget the sorrow of a husband's long absence. Similarly, 《召南·草虫》, "喓喓草虫，趯趯阜螽。未见君子，忧心忡忡。亦既见止，亦既觏止，我心则降", expresses a woman’s deep longing and anticipation for her husband. The sound of the insects contrasts with her inner turmoil, amplifying the depth of her emotions.''',
-            '''《郑风·野有蔓草》, "野有蔓草，零露漙兮。有美一人，清扬婉兮。邂逅相遇，适我愿兮". The lush grass and sparkling dew symbolize unexpected love and happiness, as the poet describes the joy of a serendipitous encounter with a beloved among the flourishing wild grass.'''
-        ]
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.write(content)
-
-        st.subheader('3. Human qualities')
-        st.write('''
-                            《小雅·何草不黄》
-
-                            何草不黄？何日不行？何人不将？经营四方。
-
-
-                            《伯兮》
-
-                            伯兮朅兮，邦之桀兮。伯也执殳，为王前驱。
-
-                            自伯之东，首如飞蓬。岂无膏沐？谁适为容！
-
-                            其雨其雨，杲杲出日。愿言思伯，甘心首疾。
-
-                            焉得谖草？言树之背。愿言思伯。使我心痗。
-                            ''')
-
-        st.image('https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/11.png?raw=true', width=300)
-
-        tabs = st.tabs(["Diligent and Strong Qualities", "Loyalty and Sacrifice"])
-        contents = [
-            '''In this poem, 《何草不黄》 reflects the qualities of people who are not afraid of difficulties and work hard through the withering of grass and the hustle and bustle of pedestrians. The withered and yellow grass symbolizes the passage of time and the resilience of life, while "何人不将？经营四方。" depicts the image of people rushing around for life and responsibility. The grass here symbolizes resilience and vitality, echoing the indomitable and hardworking spirit of people''',
-            '''Grass, this seemingly ordinary yet resilient natural image, is often endowed with rich symbolic meanings in profound cultural connotations. In the narrative depicting Bo's heroic deeds and endless loyalty to the country, grass is not just a green patch on the earth, but also a vivid metaphor, showcasing Bo's heroic posture as a forward, charging forward fearlessly.<br>Bo, the warrior of this country, his figure is like a gust of wind on the grassland, swift and unstoppable. He stood at the forefront of the battle, facing the enemy's swords and shadows, never flinching at all. In his eyes, only the peace of the country and the expectations of the king, personal life and death have long been disregarded. He deeply understands that every charge he makes is the best expression of loyalty to the country; Every time he swings his sword, it is a merciless blow to the enemy, and more importantly, to protect the land and people behind him that have nurtured him.'''
-        ]
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.markdown(content, unsafe_allow_html=True)
-
-
-        st.header('🎋 Bamboo 竹')
-        st.write('''
-                        In ancient times, Bamboo served as musical instruments, material to make books, and a variety of daily utensils. Various bamboo-made musical instruments were mentioned in the book, such as flutes, pipes, sheng (a reed mouth organ), and yue (a type of ancient Chinese flute). Many bamboo made utensils where also described, including baskets, tubs, winnowing baskets, boxes, fish traps, hats, small bamboo cages, and bamboo containers.
-
-                        《小雅•鹿鸣》：“呦呦鹿鸣，食野之苹。我有嘉宾，鼓瑟吹笙。”
-
-                        This extract was sung at banquets by the ancients. According to Zhu Xi's, it was originally sung by the monarch when entertaining his ministers, and later it gradually spread to the common people and being sung at village banquets. The song begins by depicting a scene on the open plain where a herd of deer leisurely feeds on wild grass. The occasionally emitting a melodious cry 'you you', creating a harmonious and pleasing sound. The poem uses this scene to set a warm and harmonious atmosphere. This highlights the common use of bamboo as a musical instrument, accompanying the sheng music at court banquets.
-                        ''')
-
-        st.subheader('Symbolic Poems Associated with the Plant')
-        poems = [
-            ("《淇奥》",
-             '''- 瞻彼淇奥，绿竹猗猗。有匪君子，如切如磋，如琢如磨，瑟兮僴兮，赫兮咺兮。有匪君子，终不可谖兮。\n- 瞻彼淇奥，绿竹青青。有匪君子，充耳琇莹，会弁如星。瑟兮僴兮。赫兮咺兮，有匪君子，终不可谖兮。\n- 瞻彼淇奥，绿竹如箦。有匪君子，如金如锡，如圭如璧。宽兮绰兮，猗重较兮。善戏谑兮，不为虐兮。'''),
-            ("《竹竿》",
-             '''- 籊籊竹竿，以钓于淇。岂不尔思？远莫致之。\n- 泉源在左，淇水在右。女子有行，远兄弟父母。\n- 淇水在右，泉源在左。巧笑之瑳，佩玉之傩。\n- 淇水滺滺，桧楫松舟。驾言出游，以写我忧。'''),
-            ("《诗经·小雅·斯干》",
-             '''- 秩秩斯干，幽幽南山。\n- 如竹苞矣，如松茂矣。\n- 兄及弟矣，式相好矣，无相犹矣。'''),
-            ("《小戎》",
-             '''- 俴驷孔群，厹矛鋈錞。\n- 蒙伐有苑，虎韔镂膺。\n- 交韔二弓，竹闭绲滕。\n- 言念君子，载寝载兴。\n- 厌厌良人，秩秩德音。''')
+            'It is mainly reflected in "staying in Cao Ying but with his heart loyal to Han" and "resigning his post and returning the gold seals". Cao Cao offered him high official positions and generous rewards, but once he learned of Liu Bei\'s whereabouts, he resolutely abandoned all glory and wealth to return to his former lord. This absolute loyalty to his sworn brother and the imperial power of the Han Dynasty is the most noble political virtue in Confucian thought.')
+        st.markdown("---")
+
+        st.subheader('2. 义 Righteousness ')
+        st.write(
+            'This is the core of Guan Yu\'s personal charm. It is embodied in "sparing Cao Cao out of righteousness at Huarong Trail". To repay Cao Cao\'s kindness in the past, he risked military punishment to let his powerful enemy escape. This difficult choice and final decision between "personal righteousness" and "public loyalty" elevated Guan Yu\'s image from a mere military general to a moral paragon who values friendship and keeps his promises, with flesh and blood.')
+        st.markdown("---")
+
+        st.subheader('3. 勇武 Courage and Martial Prowess ')
+        st.write(
+            'These are the military guarantees for the realization of his "loyalty" and "righteousness". A series of allusions such as "attending the meeting with a single sword", "crossing five passes and slaying six generals", and "beheading Hua Xiong while the wine was still warm" repeatedly strengthen his image as an unparalleled and invincible super warrior.')
+        st.markdown("---")
+
+        st.subheader('4. The Relationship Between the Four Core Symbols ')
+        st.write(
+            '"Martial Prowess" is the foundation, "Courage" is the temperament, "Loyalty" is the direction, and "Righteousness" is the soul. He had the ability (martial prowess) and courage to fulfill his promises, and his actions were always guided by the highest moral principles of "loyalty" and "righteousness".')
+
+        title1 = "1. Allusion Symbols: Specific Narratives of \"Loyalty, Righteousness, Courage, and Martial Prowess\""
+        st.markdown(f"<h4 style='text-align: left; font-size:24px;'>{title1}</h4>", unsafe_allow_html=True)
+        list1 = [
+            ("Loyalty Dimension",
+             '''- The Oath of the Peach Garden (brotherly loyalty) \n- staying in Cao Ying with his heart loyal to Han (loyalty to the Han Dynasty) \n- resigning his post and returning the gold seals (abstaining from wealth to uphold loyalty).'''),
+            ("Righteousness Dimension",
+             '''- Sparing Cao Cao out of righteousness at Huarong Trail (righteousness of repaying kindness) \n- beheading Cai Yang at the Meeting of the Ancient City (righteousness of vindicating his brother) '''),
+            ("Courage and Martial Prowess Dimension",
+             '''- Beheading Hua Xiong while the wine was still warm \n- crossing five passes and slaying six generals \n- beheading Yan Liang and Zhu Wenchou (unrivaled martial skill on the battlefield) \n- attending the meeting with a single sword (courage in venturing alone into danger)'''),
+            ("Tragic Undertone",
+             '''- Defeat and flight to Maicheng (the hero's downfall, completing his image).'''),
         ]
 
         # 创建多列
         cols = st.columns(4)  # 根据需要调整列数
 
-        for col, (title, content) in zip(cols, poems):
+        for col, (title, content) in zip(cols, list1):
             with col:
                 # 使用更小号的标题字体
                 st.markdown(f"<h4 style='text-align: center; font-size:18px;'>{title}</h4>", unsafe_allow_html=True)
                 st.write(content)
+        st.markdown("---")
 
-        st.subheader('1. Seasonal connections ')
-        tabs = st.tabs(["Statistical Results", "Symbolism"])
-        contents = [
-            '''By filtering the poems related to ‘竹 (Bamboo)’ in The Book of Songs and the time elements they contain, the results show that ‘竹’ appears 6 times, of which 3 times are in ‘spring’, and the remaining 3 times are in unknown seasons. <br>There are a number of poems related to spring, such as ‘瞻彼淇奧、綠竹猗猗’ and ‘瞻彼淇奧、綠竹青青’ in ‘國風·衛風·淇奧’, which depict the scene of lush green bamboo by the Qi water in spring, reflecting the vitality and vigour of spring. ''',
-            '''Through the depiction of bamboo, these verses show the ancient poets' profound understanding and expression of nature, emotion, society and craftsmanship, reflecting the rich cultural connotations and social values of The Book of Songs as an important part of the treasury of classical Chinese literature. Through the depiction of bamboo, the poet conveys his admiration for the beauty of nature, his celebration of the virtues of a gentleman, and his yearning for a harmonious society.'''
-        ]
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.write(content, unsafe_allow_html=True)
+        title2 = "2. Object Symbols: Visual Markers"
+        st.markdown(f"<h4 style='text-align: left; font-size:24px;'>{title2}</h4>", unsafe_allow_html=True)
+        cols = st.columns(3)
+        with cols[0]:
+            st.info("🗡️ **青龙偃月刀**\n- Symbol of martial prowess\n- Bound to Guan Yu's bravery")
+        with cols[1]:
+            st.success("🐎 **赤兔马**\n- Speed and nobility\n- Justifies 'five passes, six generals'")
+        with cols[2]:
+            st.warning("👕 **青袍**\n- Iconic costume\n- Strengthens audience memory")
 
-        st.subheader('2. Emotional associations')
-        tabs = st.tabs(["Praise", "Homeland Sentiment", "Love"])
-        contents = [
-            '''In The Book of Songs:《国风·淇奥》, the verse“瞻彼淇奥，绿竹猗猗。有匪君子，如切如磋，如琢如磨”uses the lush and vibrant bamboo along the Qi River to extol the lofty virtues of a gentleman. The upright and verdant nature of the bamboo symbolizes the gentleman's integrity and cultivation, while the imagery of “如切如磋，如琢如磨 emphasizes the meticulous refinement of his character.''',
-            '''《小雅·斯干》 creates a peaceful and tranquil natural environment by depicting clear streams, deep southern mountains, dense bamboo forests, and pine forests, symbolizing attachment to home and reverence for nature. In the poem, the phrase '兄及弟矣，式相好矣，无相犹矣' expresses the harmony and friendship between brothers, reflects the unity and harmony within the family, and is an important factor in maintaining family stability and prosperity.''',
-            '''  In this poem, the emotion of longing is beautifully conveyed through the image of "籊籊竹竿": the poet stands alone by the Qi River, holding the fishing rod, its gentle swaying mirroring the fluctuations of their thoughts. The act of fishing subtly implies the desire to "catch" their beloved. The emotional progression moves from the tangible "籊籊竹竿" to the internal questioning "岂不尔思," and finally to the helpless realization "远莫致之," creating a poignant transition from hope to resignation. This portrays the melancholy of one who carries deep affection yet cannot reach their beloved. The longing expressed here is pure and profound, as steadfast as the bamboo itself-even knowing that reunion is impossible, they still faithfully wait by the water, expressing their endless yearning in this subtle yet sincere manner.'''
-        ]
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.write(content)
+        st.markdown("---")
+        title3 = "3. Identity Symbols: Endorsements of Authority and Legitimacy"
+        st.markdown(f"<h4 style='text-align: left; font-size:24px;'>{title3}</h4>", unsafe_allow_html=True)
+        st.info(
+            "🧑 **关云长**: Personal identity recognition, core title among people and stage.\n\n📜 **汉寿亭侯**: Official title, legitimacy and authority, echoing loyalty to Han.")
+        st.markdown("---")
 
-        st.subheader('3. Human qualities')
+        title4 = "4. Scene Imagery: Creating Atmosphere and Reflecting Mood"
+        st.markdown(f"<h4 style='text-align: left; font-size:24px;'>{title4}</h4>", unsafe_allow_html=True)
+        st.success(
+            "🌊 **大江**: Corresponding to scenes like the \"single sword meeting\". \n It highlights the hero's broad and heroic spirit.\n\n🏯 **麦城**: Linked to \"defeat and flight to Maicheng\". \n It evokes a tragic atmosphere and adds tension to the hero's image.\n\n⛰️ **土山**: Associated with the \"Three Agreements on Earth Mountain\" \n It reflects Guan Yu's dilemma and choices in upholding loyalty and righteousness.")
+        st.markdown("---")
+
+        title5 = "5. Behavioral Imagery: Highlighting Character and Sentiment"
+        st.markdown(f"<h4 style='text-align: left; font-size:24px;'>{title5}</h4>", unsafe_allow_html=True)
+        st.warning(""" 
+               **夜读《春秋》**: Shows that Guan Yu "was a warrior with literary grace", highlighting his elegance and perseverance beyond loyalty and righteousness. \n
+               **封金舍袍**: Refusing wealth in Cao Cao's camp, reinforcing his character of "being loyal to his former lord and not coveting fame and fortune". \n
+               **温酒斩华雄**: Condenses his martial traits, becoming a classic scene of "速胜" and "神威".
+           """)
+        st.markdown("---")
+
+        title6 = "6. Emotional Imagery: Emotional Expressions of the Spiritual Core"
+        st.markdown(f"<h4 style='text-align: left; font-size:24px;'>{title6}</h4>", unsafe_allow_html=True)
+        st.error(
+            "❤️ **丹心**: Corresponding to loyalty, it is the spiritual portrayal of \"身在曹营心在汉\".\n\n🔥 **豪气**: Corresponding to courage, martial prowess, and righteousness, embodied in scenes like the \"单刀会\" and \"过五关斩六将\".\n\n🩸 **英雄血**: Linked to \"败走麦城\", it is both the end of the tragedy and a symbol of martyrdom for the spirit of loyalty and righteousness.")
+    elif Analysis_page == 'Guanyu role orientation and personality':
+        st.header("Guan Yu's Role Orientation and Personality Analysis")
+
+        # First, Guan Yu's role orientation and personality
+        st.subheader("1. Core Role Positioning")
         st.write('''
-                            《卫风·淇奥》
+* Military leader: As an important general under Liu Bei, Guan Yu plays a central role in military operations, responsible for directing operations and formulating strategies. According to statistics, this is Guan Yu's most important functional orientation, with a frequency of 130 times.
+* Protector: Guan Yu often undertakes the responsibility of protecting Liu Bei and his family, showing his loyalty and sense of responsibility. This function is particularly prominent in classic plots such as "riding a thousand miles alone".
+* Moral model: Guan Yu was portrayed as the embodiment of loyalty, and his words and deeds became the standard of moral judgment in the play.
+* Key decision-makers: At many critical moments, Guan Yu's decisions have a great impact on the plot, such as "Huarong Daoyi explained Cao Cao" and other plots.
+* Conflict promoter: Guan Yu's personality and behavior often trigger or solve conflicts in the play and push the story forward.
+        ''')
+        st.image("Guanyu_anaylize/1_guanyu_character_development.png")
 
-                            瞻彼淇奥，绿竹猗猗。有匪君子，如切如磋，如琢如磨。
+        st.subheader("2. Personality Characteristics")
+        st.write('''
+* Loyalty and righteousness: This is Guan Yu's most prominent personality characteristic (frequency of appearance 150 times). Guan Yu's loyalty to Liu Bei and his attention to the feeling of loyalty constitute the core of his character.
+* Bravery: Guan Yu, as a fierce general, is invincible on the battlefield, and the plot of beheading Yan Liang and killing Wen Chou highlights this feature.
+* Empathy: Guan Yu shows complex and profound affection towards Liu Bei, Zhang Fei, and even Cao Cao, which enriches the emotional level of the role.
+* Calm: At critical moments, Guan Yu often shows calmness and composure, and can make wise judgments.
+* Arrogance: This is a negative feature of Guan Yu's personality, and it has also become one of the important reasons for his final defeat in Maicheng.
+        ''')
+        st.image("Guanyu_anaylize/2_guanyu_multi_dimension_analysis.png")
 
-                            《小雅·斯干》
+        # Second, the multidimensional analysis of narrative function
+        st.header("Second, Multidimensional Analysis of Narrative Function")
 
-                            如竹苞矣，如松茂矣。兄及弟矣，式相好矣，无相犹矣。
-                            ''')
+        st.subheader("1. Plot Promotion Mechanism and Intensity")
+        st.write('''
+Guan Yu promoted the development of the plot through various types of events. The intensity and influence of different events are different, which can be divided into the following categories:
+① Action events (25 times): Guan Yu's specific actions directly promoted the development of the plot, such as "going to the meeting with one knife" and "flooding seven armies".
+② Conflict-type events (18 times): The conflict that Guan Yu participated in or triggered became a plot turning point, such as the intensification of the conflict with Soochow.
+③ Decision-making events (15 times): Guan Yu's key decisions changed the plot direction, such as "releasing Cao Cao" and "refusing marriage".
+④ Emotional events (10 times): Guan Yu's emotional expression and inner struggle enriched the plot level.
+⑤ Loyalty events (7 times): Guan Yu's key moments to show loyalty, such as "riding a thousand miles alone".
+        ''')
+        st.write('''
+Among them, "Huarong Daoyi explained Cao Cao", "Riding a Thousand Miles Alone" and "Defeating Maicheng" are the three pillar events of Guan Yu's narrative function:
+① "Huarong Daoyi Interprets Cao Cao": It is an important turning point of the plot to reflect Guan Yu's character of attaching importance to affection and change the short-term pattern of the Three Kingdoms.
+② "Riding alone for thousands of miles": highlighting his loyalty and bravery, and laying the dual position of his moral model and military leader;
+③ "Defeating Maicheng": It marks the end of Guan Yu's tragic fate, sublimates the theme of "loyalty and righteousness" and arouses readers' emotional resonance.
+        ''')
+        st.image("Guanyu_anaylize/3_guanyu_event_types.png")
+        st.image("Guanyu_anaylize/4_guanyu_plot_driving_trend.png")
+        st.image("Guanyu_anaylize/5_guanyu_character_network.png")
 
-        st.image('https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/14.png?raw=true', width=300)
+        st.subheader("2. Dynamic Evolution of Functions")
+        st.write('''
+Guan Yu's narrative function is dynamically adjusted with the change of story stage, showing a clear evolution track:
+① Early rising stage (Taoyuan became sworn-warm wine killed Hua Xiong): The core function is "role shaping" (score 90 points). The loyalty background is established through the loyalty in Taoyuan, and Hua Xiong is displayed with warm wine, thus the basic image of Guan Yu's loyalty and bravery is quickly established.
+② Peak stage (riding alone for thousands of miles-flooding seven armies): the core functions are transformed into "plot turning" (score 95 points) and "conflict escalation" (score 90 points). Riding a thousand miles to promote the reunion of Liu Bei Group, Huarong Daoyi explained Cao Cao's fate, flooded the Seventh Army to reach the peak of military achievements, and intensified the conflict with Soochow, which became the key to accelerate the development of the plot.
+③ Crisis stage (careless loss of Jingzhou-trapped in Maicheng): the core function is changed to "emotional rendering" (score 90 points). After Jingzhou fell, Guan Yu fell from the peak, and his anxiety and remorse paved the way for the tragic ending.
+④ Tragedy ending stage (failure in Maicheng-physical death): the core functions are upgraded to "theme deepening" (score 95 points) and "emotional rendering" (score 100 points). Guan Yu's death is not only the end of personal fate, but also sublimates the theme of "loyalty" in the book and becomes one of the most emotional fragments.
+        ''')
 
-        tabs = st.tabs(["Integrity and Humility", "Unity and Harmony"])
-        contents = [
-            '''In this poem, 绿竹猗猗' depicts the lush bamboo forest along the banks of the Qi River, symbolizing the virtues of a gentleman. The upright, verdant, and resilient nature of bamboo symbolizes the noble qualities and strong will of a gentleman. The "bamboo" here represents the integrity, humility, and elegance of a gentleman, reflecting the praise and longing for the moral character of a gentleman.''',
-            '''In 《小雅·斯干》, the phrase "如竹苞矣" is taken from the characteristics of lush bamboo clusters, symbolizing brotherhood and harmony. The "bamboo" here symbolizes family harmony and brotherly solidarity, reflecting people's emphasis and admiration for harmonious family relationships. The lush and vibrant bamboo symbolizes harmony and support among family members, reflecting the virtues of unity and mutual assistance.'''
-        ]
-        for tab, content in zip(tabs, contents):
-            with tab:
-                st.write(content)
+        # Third, the analysis of social relations
+        st.header("Third, Analysis of Social Relations")
+        st.write('''
+Guan Yu's social network connects different camps, and the intensity of its interaction with the main characters directly affects the plot development and role shaping, which can be divided into two categories: allies and opponents:
+Major allies:
+① Liu Bei: The interaction frequency is the highest and the relationship is the closest, which is the core link of Taoyuan. The deep brotherhood between them is the core source of Guan Yu's "loyalty and righteousness" character. Many decisions of Guan Yu (such as finding a brother thousands of miles away) revolve around Liu Bei, which affects the development direction of Liu Bei Group.
+② Zhang Fei: As sworn brothers, there are both battlefield cooperation and personality conflicts. The interaction between them enriches the role relationship within Liu Bei Group and enhances the authenticity of the narrative.
+③ Zhuge Liang: There were strategic differences in the early stage, and gradually became strategic partners in the later stage. Zhuge Liang's strategy of "uniting with Wu to resist Cao" is in contrast with Guan Yu's tough attitude, and their interaction directly affects Jingzhou's strategic decision.
+④ Zhao Yun: Both of them are generals under Liu Bei. They have a harmonious relationship and often work together in the battlefield. The interaction between them highlights the unity within Liu Bei Group and strengthens the group characteristics of "loyalty and righteousness"
+Main opponent:
+① Cao Cao: The most complicated opponent, with both hostility and respect, constitutes an important emotional conflict in the narrative and enriches the versatility of the role.
+② Sun Quan: The contradiction intensified because of Guan Yu's arrogance. The opposition between the two men directly triggered the war in Jingzhou, which was an important inducement of Guan Yu's tragic fate.
+③ Lv Meng: Guan Yu's key opponent, who ultimately led to his downfall, made a surprise attack on Jingzhou through "crossing the river in white". It is the concentrated explosion point of the contradiction between Dongwu and Liubei Group.
+④ Zhou Yu: Battle of Red Cliffs's main rival before and after laid the groundwork for the subsequent Jingzhou dispute.
+        ''')
+        st.image("Guanyu_anaylize/12_guanyu_narrative_heatmap.png")
+
+        # Fourth, the chart analysis summary
+        st.header("Fourth, Chart Analysis Summary")
+        st.write('''
+This study quantitatively analyzes Guan Yu's narrative function from multiple dimensions through visual charts, and the core charts are interpreted as follows.
+1. The frequency of Guan Yu's appearance in the main scripts: "Riding alone for a thousand miles" (221 times), "Walking in Maicheng" (180 times) and "One-knife Meeting" (115 times) are the highest, which reflects his key position in the core plot and confirms the importance of the "Three Pillars Event".
+2. Distribution of Guan Yu's behavior types (pie chart): Military action (34.8%) and combat (24.6%) account for more than 50%, highlighting the core attributes of his military commanders; The proportion of decision-making (17.4%), conversation (13.0%) and emotional expression (10.2%) is relatively low, which is in line with his calm and quiet personality.
+3. The radar chart of Guan Yu's personality characteristics: loyalty (100 points) and bravery (95 points) are the highest dimensions, and arrogance (40 points) is the lowest dimension, which intuitively presents the core advantages and fatal defects of his personality.
+4. Histogram of Guan Yu's function orientation: Military leaders (130 times) appear most frequently, followed by protectors (100 times), moral models (95 times), conflict promoters (85 times) and key decision makers (75 times).
+5. Analysis of the intensity of interaction network between Guan Yu and the main characters: Liu Bei (95 points), Zhang Fei (90 points) and Cao Cao (85 points) are the top three, which confirms the core node of Guan Yu's social network and reflects its pivotal role in connecting different camps.
+        ''')
+        st.image("Guanyu_anaylize/7_guanyu_play_frequency.png")
+        st.image("Guanyu_anaylize/8_guanyu_behavior_distribution.png")
+        st.image("Guanyu_anaylize/9_guanyu_character_radar.png")
+        st.image("Guanyu_anaylize/10_guanyu_function_analysis.png")
+        st.image("Guanyu_anaylize/11_guanyu_character_interactions.png")
+
+        # Fifth, the comprehensive evaluation of Guan Yu's narrative function
+        st.header("Fifth, Comprehensive Evaluation of Guan Yu's Narrative Function")
+        st.subheader("1. Positioning of Core Narrative Function")
+        st.write('''
+① Plot turning point: Key actions (such as Huarong's release of Cao and the flooding of the Seventh Army) have repeatedly become the nodes of plot turning, pushing the story from one stage to the next.
+② Theme bearer: It is the only core carrier and concrete embodiment of the theme of "loyalty and righteousness"
+③ Conflict engine: It is not only the initiator of external conflict, but also the resolver of internal conflict, providing tension for narrative.
+④ Role relationship hub: Its social network covers the main forces of the three countries, and promotes the intertwined development of multiple plots through interaction.
+⑤ Emotional resonance point: The fate track from peak to tragedy stimulates readers' value recognition and enhances the artistic appeal of the works.
+        ''')
+        st.image("Guanyu_anaylize/12_guanyu_narrative_heatmap.png")
+
+        st.subheader("2. Uniqueness of Narrative Function")
+        st.write('''
+① Multifunctional: It undertakes multiple functions such as plot promotion, theme expression and emotional rendering at the same time, avoiding the limitations of a single functional role.
+② Penetration: From the beginning of the story, Taoyuan became righteous, to the peak battle in the middle period, and then to the tragic ending in the later period, its narrative function runs through the book, and it is one of the few characters who accompany the complete development process of Liu Bei Group.
+③ Persistence of influence: Its key decisions can have a far-reaching impact across the story stage. For example, Huarong's release of Cao Cao and the Northern Expedition of Fancheng not only affect the current plot, but also have a far-reaching impact on the plots in subsequent stages.
+④ Emotional depth: The versatility of personality and emotional complexity make the role more realistic and infectious.
+        ''')
+        st.image("Guanyu_anaylize/13_guanyu_driving_types_statistics 2.png")
+        st.image("Guanyu_anaylize/14_guanyu_driving_types_statistics.png")
+        st.image("Guanyu_anaylize/6_guanyu_narrative_efficiency.png")
+
+        # Sixth, Research conclusions
+        st.header("Sixth, Research Conclusions")
+        st.subheader("(A) Main Findings")
+        st.write('''
+* Role complexity: Guan Yu is a three-dimensional role with multiple orientations and complex personality, which is the root of his eternal artistic charm.
+* Core plot driving force: Guan Yu's behavior and decision-making directly affect the key trend of the narrative of the Three Kingdoms, and the three pillar events constitute an important plot node of the book.
+* Cultural symbolic meaning: Beyond the category of literary role, it has become synonymous with the spirit of "loyalty and righteousness" in traditional culture.
+* Dialectical relationship between character and fate: Loyalty and bravery made him a hero, while arrogance led to his tragic ending, full of profound tragic beauty.
+        ''')
+        st.subheader("(B) Theoretical Significance")
+        st.write('''
+* Through Guan Yu's case, the narrative theories such as "diversity of role functions" and "dynamic evolution of functions" are verified, which provides concrete samples for the analysis of literary role functions.''')
+    elif Analysis_page == 'Scripts Analysis':
+        st.header("Character Positioning Analysis of Guan Yu")
+
+
 
 elif page == '😊 Interaction':
     cover_photo_path = "https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/17.png?raw=true"
@@ -572,9 +478,13 @@ elif page == '💖 About Us':
     st.subheader('✨ Team Members')
     st.write('''1.Technological Development:
 
-    SU Zihan (24062583G@connect.polyu.hk)
+    Shen Ziqi 
 
-    CHEN Youyang (24062058G@connect.polyu.hk)
+    Ye Haoqi 
+    
+    Lve Shao Han
+     
+    Ye Jing
 
                 ''')
     st.write('''2.Humanities Analysis:
