@@ -1,0 +1,104 @@
+
+First, Guan Yu's role orientation and personality
+1. Core role positioning
+* Military leader: As an important general under Liu Bei, Guan Yu plays a central role in military operations, and is responsible for directing operations and formulating strategies. According to statistics, this is Guan Yu's most important functional orientation, with a frequency of 130 times.
+* Protector: Guan Yu often undertakes the responsibility of protecting Liu Bei and his family, showing his loyalty and sense of responsibility. This function is particularly prominent in classic plots such as "riding a thousand miles alone".
+* Moral model: Guan Yu was portrayed as the embodiment of loyalty, and his words and deeds became the standard of moral judgment in the play.
+* Key decision-makers: At many critical moments, Guan Yu's decision has a great impact on the plot, such as "Huarong Daoyi explained Cao Cao" and other plots.
+* Conflict promoter: Guan Yu's personality and behavior often trigger or solve conflicts in the play and push the story forward.
+Guanyu_anaylize/1_guanyu_character_development.png
+
+
+2. Personality characteristics
+* Loyalty and righteousness: this is Guan Yu's most prominent personality characteristic (frequency of appearance 150 times). Guan Yu's loyalty to Liu Bei and his attention to the feeling of loyalty constitute the core of his character.
+* Bravery: Guan Yu, as a fierce general, is invincible on the battlefield, and the plot of beheading Yan Liang and killing Wen Chou highlights this feature.
+* Empathy: Liu Bei, Zhang Fei and even Cao Cao all show complex and profound affection, which enriches the emotional level of the role.
+* Calm: At critical moments, Guan Yu often shows calmness and composure, and can make wise judgments.
+* Arrogance: This is a negative feature of Guan Yu's personality, and it has also become one of the important reasons for his final defeat in Maicheng.
+Guanyu_anaylize/2_guanyu_multi_dimension_analysis.png
+
+Second, the multidimensional analysis of narrative function
+1. Plot promotion mechanism and intensity
+   Guan Yu promoted the development of the plot through various types of events. The intensity and influence of different events are different, which can be divided into the following categories:
+① Action events (25 times): Guan Yu's specific actions directly promoted the development of the plot, such as "going to the meeting with one knife" and "flooding seven armies".
+② Conflict-type events (18 times): The conflict that Guan Yu participated in or triggered became a plot turning point, such as the intensification of the conflict with Soochow.
+③ Decision-making events (15 times): Guan Yu's key decisions changed the plot direction, such as "releasing Cao Cao" and "refusing marriage".
+④ Emotional events (10 times): Guan Yu's emotional expression and inner struggle enriched the plot level.
+⑤ Loyalty events (7 times): Guan Yu's key moment to show loyalty, such as "riding a thousand miles alone".
+Guanyu_anaylize/3_guanyu_event_types.png
+
+   Among them, "Huarong Daoyi explained Cao Cao", "Riding a Thousand Miles Alone" and "Defeating Maicheng" are the three pillar events of Guan Yu's narrative function:
+① "Huarong Daoyi Interprets Cao Cao": It is an important turning point of the plot to reflect Guan Yu's character of attaching importance to affection and change the short-term pattern of the Three Kingdoms.
+② "Riding alone for thousands of miles": highlighting his loyalty and bravery, and laying the dual position of his moral model and military leader;
+③ "Defeating Maicheng": It marks the end of Guan Yu's tragic fate, sublimates the theme of "loyalty and righteousness" and arouses readers' emotional resonance.
+Guanyu_anaylize/4_guanyu_plot_driving_trend.png
+Guanyu_anaylize/5_guanyu_driving_types_statistics 2.png
+
+
+2. Dynamic evolution of functions
+    Guan Yu's narrative function is dynamically adjusted with the change of story stage, showing a clear evolution track:
+① Early rising stage (Taoyuan became sworn-warm wine killed Hua Xiong): The core function is "role shaping" (score 90 points). The loyalty background is established through the loyalty in Taoyuan, and Hua Xiong is displayed with warm wine, thus the basic image of Guan Yu's loyalty and bravery is quickly established.
+② Peak stage (riding alone for thousands of miles-flooding seven armies): the core functions are transformed into "plot turning" (score 95 points) and "conflict escalation" (score 90 points). Riding a thousand miles to promote the reunion of Liu Bei Group, Huarong Daoyi explained Cao Cao's fate, flooded the Seventh Army to reach the peak of military achievements, and intensified the conflict with Soochow, which became the key to accelerate the development of the plot.
+③ Crisis stage (careless loss of Jingzhou-trapped in Maicheng): the core function is changed to "emotional rendering" (score 90 points). After Jingzhou fell, Guan Yu fell from the peak, and his anxiety and remorse paved the way for the tragic ending.
+④ Tragedy ending stage (failure in Maicheng-physical death): the core functions are upgraded to "theme deepening" (score 95 points) and "emotional rendering" (score 100 points). Guan Yu's death is not only the end of personal fate, but also sublimates the theme of "loyalty" in the book and becomes one of the most emotional fragments.
+
+Third, the analysis of social relations
+    Guan Yu's social network connects different camps, and the intensity of its interaction with the main characters directly affects the plot development and role shaping, which can be divided into two categories: allies and opponents:
+   Major allies:
+① Liu Bei: The interaction frequency is the highest and the relationship is the closest, which is the core link of Taoyuan. The deep brotherhood between them is the core source of Guan Yu's "loyalty and righteousness" character. Many decisions of Guan Yu (such as finding a brother thousands of miles away) revolve around Liu Bei, which affects the development direction of Liu Bei Group.
+② Zhang Fei: As sworn brothers, there are both battlefield cooperation and personality conflicts. The interaction between them enriches the role relationship within Liu Bei Group and enhances the authenticity of the narrative.
+③ Zhuge Liang: There were strategic differences in the early stage, and gradually became strategic partners in the later stage. Zhuge Liang's strategy of "uniting with Wu to resist Cao" is in contrast with Guan Yu's tough attitude, and their interaction directly affects Jingzhou's strategic decision.
+④ Zhao Yun: Both of them are generals under Liu Bei. They have a harmonious relationship and often work together in the battlefield. The interaction between them highlights the unity within Liu Bei Group and strengthens the group characteristics of "loyalty and righteousness"
+   Main opponent:
+① Cao Cao: The most complicated opponent, with both hostility and respect, constitutes an important emotional conflict in the narrative and enriches the versatility of the role.
+② Sun Quan: The contradiction intensified because of Guan Yu's arrogance. The opposition between the two men directly triggered the war in Jingzhou, which was an important inducement of Guan Yu's tragic fate.
+③ Lv Meng: Guan Yu's key opponent, who ultimately led to his downfall, made a surprise attack on Jingzhou through "crossing the river in white". It is the concentrated explosion point of the contradiction between Dongwu and Liubei Group.
+④ Zhou Yu: Battle of Red Cliffs's main rival before and after laid the groundwork for the subsequent Jingzhou dispute.
+Guanyu_anaylize/6_guanyu_narrative_heatmap.png
+
+
+Fourth, the chart analysis summary
+    This study quantitatively analyzes Guan Yu's narrative function from multiple dimensions through visual charts, and the core charts are interpreted as follows.
+    1. The frequency of Guan Yu's appearance in the main scripts: "Riding alone for a thousand miles" (221 times), "Walking in Maicheng" (180 times) and "One-knife Meeting" (115 times) are the highest, which reflects his key position in the core plot and confirms the importance of the "Three Pillars Event".
+Guanyu_anaylize/7_guanyu_play_frequency.png
+    2. Distribution of Guan Yu's behavior types (pie chart): Military action (34.8%) and combat (24.6%) account for more than 50%, highlighting the core attributes of his military commanders; The proportion of decision-making (17.4%), conversation (13.0%) and emotional expression (10.2%) is relatively low, which is in line with his calm and quiet personality.
+Guanyu_anaylize/8_guanyu_behavior_distribution.png
+    3. The radar chart of Guan Yu's personality characteristics: loyalty (100 points) and bravery (95 points) are the highest dimensions, and arrogance (40 points) is the lowest dimension, which intuitively presents the core advantages and fatal defects of his personality.
+Guanyu_anaylize/9_guanyu_character_radar.png
+    4. Histogram of Guan Yu's function orientation: Military leaders (130 times) appear most frequently, followed by protectors (100 times), moral models (95 times), conflict promoters (85 times) and key decision makers (75 times).
+Guanyu_anaylize/10_guanyu_function_analysis.png
+    5. Analysis of the intensity of interaction network between Guan Yu and the main characters: Liu Bei (95 points), Zhang Fei (90 points) and Cao Cao (85 points) are the top three, which confirms the core node of Guan Yu's social network and reflects its pivotal role in connecting different camps.
+Guanyu_anaylize/11_guanyu_character_interactions.png
+
+Fifth, the comprehensive evaluation of Guan Yu's narrative function
+1. Positioning of core narrative function
+Plot turning point: Key actions (such as Huarong's release of Cao and the flooding of the Seventh Army) have repeatedly become the nodes of plot turning, pushing the story from one stage to the next.
+② Theme bearer: it is the only core carrier and concrete embodiment of the theme of "loyalty and righteousness"
+③ Conflict engine: it is not only the initiator of external conflict, but also the resolver of internal conflict, providing tension for narrative.
+④ Role relationship hub: its social network covers the main forces of the three countries, and promotes the intertwined development of multiple plots through interaction.
+⑤ Emotional resonance point: the fate track from peak to tragedy, which stimulates readers' value recognition and enhances the artistic appeal of the works.
+Guanyu_anaylize/12_guanyu_narrative_heatmap.png
+
+2. The uniqueness of narrative function
+① Multifunctional: it undertakes multiple functions such as plot promotion, theme expression and emotional rendering at the same time, avoiding the limitations of a single functional role.
+② Penetration: From the beginning of the story, Taoyuan became righteous, to the peak battle in the middle period, and then to the tragic ending in the later period, its narrative function runs through the book, and it is one of the few characters who accompany the complete development process of Liu Bei Group.
+③ Persistence of influence: its key decisions can have a far-reaching impact across the story stage. For example, Huarong's release of Cao Cao and the Northern Expedition of Fancheng not only affect the current plot, but also have a far-reaching impact on the plots in subsequent stages.
+④ Emotional depth: the versatility of personality and emotional complexity make the role more realistic and infectious.
+Guanyu_anaylize/13_guanyu_driving_types_statistics 2.png
+Guanyu_anaylize/14_guanyu_driving_types_statistics.png
+Guanyu_anaylize/6_guanyu_narrative_efficiency.png
+
+
+
+VI. Research conclusions
+(A) Main findings
+* Role complexity: Guan Yu is a three-dimensional role with multiple orientations and complex personality, which is the root of his eternal artistic charm.
+* Core plot driving force: Guan Yu's behavior and decision-making directly affect the key trend of the narrative of the Three Kingdoms, and the three pillar events constitute an important plot node of the book.
+* Cultural symbolic meaning: beyond the category of literary role, it has become synonymous with the spirit of "loyalty and righteousness" in traditional culture. .
+* Dialectical relationship between character and fate: loyalty and bravery made him a hero, while arrogance led to his tragic ending, full of profound tragic beauty.
+(B) Theoretical significance
+* Through Guan Yu's case, the narrative theories such as "diversity of role functions" and "dynamic evolution of functions" are verified, which provides concrete samples for the analysis of literary role functions.
+* Combining data statistics and visual analysis, it provides an interdisciplinary method of "quantitative+qualitative" for the study of classical roles.
+(C) Research limitations and prospects
+* Limitations: the data sample does not completely cover all relevant literary and artistic carriers, and there may be problems of incomplete samples; It is difficult to fully understand the cultural connotation of Guan Yu's image by automatic analysis, and more manual interpretation is needed to supplement it.
+* Future research direction: expand the data range, include the image of Guan Yu in folk literature, film adaptation and other carriers, and analyze the evolution differences of the image in different carriers; Carry out comparative research and compare the narrative function of Guan Yu with Zhang Fei, Zhao Yun and other military commanders in the same period; From the perspective of cultural anthropology, this paper deeply discusses the evolution process of Guan Yu's image from literary role to cultural symbol, and analyzes the social and cultural motivation behind it.
