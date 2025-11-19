@@ -2,6 +2,11 @@ import streamlit as st
 import pathlib
 import base64
 import datetime
+import io
+import zipfile
+import matplotlib.pyplot as plt
+from pathlib import Path
+import os
 
 
 # Set the page configuration
@@ -456,49 +461,65 @@ This study quantitatively analyzes Guan Yu's narrative function from multiple di
         st.subheader("2. Variety in Vocal Techniques")
         st.image("image/Scripts/6.png")
         st.write("""
-           Across the scripts analyzed, Guan Yu’s singing style uses a wide range of techniques:
+        Across the scripts analyzed, Guan Yu constructs his authoritative presence through extensive use of solemn spoken passages, while his core singing lines employ powerful, soaring, and emotionally charged techniques. The “西皮摇板（xipi yaoban, 82 occurrences）— Xipi Yaoban”, characterized by a bright and vigorous melodic flow with flexible rhythmic movement, vividly conveys his surging inner passion. The use of “吹腔（chuīqiāng, 52 occurrences）— Chuqiang”, a resonant, breath-driven vocal mode with an archaic and elegant color, further enhances the refined, ritualized dignity associated with his identity as both a “Martial Saint” and a “scholarly general.” These vocal traits reinforce that he is not a reckless brute, but a disciplined commander who balances strength with propriety.
+        """)
 
-           • Heavy, stately vocal lines to establish authority  
-           • Powerful resonance in central sections  
-           • Western-style falsetto (82 occurrences) to express inner sorrow  
-           • Short and forceful tones (52 occurrences) for dramatic tension
+        st.subheader("Shannon Entropy of Vocal Technique Diversity")
 
-           These choices give his vocal performance an ancient, dignified color, befitting a sacred, disciplined, and ritualized martial figure.
-           He is presented not as a reckless warrior but as a solemn, graceful leader.
+        try:
+            entropy_value = 1.4821  # 你已提供的值
 
-           The Xiangyan Index calculated as 1.4821 shows that his vocal style possesses moderate-to-high diversity.
-           He does not rely on a single pattern but adjusts his vocal techniques flexibly according to dramatic context.
+            fig, ax = plt.subplots(figsize=(4, 5))
 
-           Bright tones such as:
-           • “White-tone chanting” (25)
-           • “Baritone resonance” (40)
-           • “Open-throat declamation” (218)
-           • “Nasal chanting” (108)
+            ax.bar(["Guan Yu"], [entropy_value], color="skyblue")
+            ax.set_ylim(0, 3)  # 视觉更友好，可按需要调节
+            ax.set_ylabel("Shannon Entropy")
+            ax.set_title("Diversity of Vocal Techniques (Higher = More Diverse)")
 
-           all appear frequently, revealing rich variation and emotional depth.
+            # 在柱状顶部显示数值
+            ax.text(0, entropy_value + 0.05, f"{entropy_value:.4f}", ha="center")
 
-           These stylistic choices highlight:
-           • his calm dignity,
-           • ritualized authority,
-           • and steady self-possession.
+            st.pyplot(fig)
 
-           During climactic scenes, Guan Yu demonstrates restrained anger, moral judgment, and awe-inspiring presence through vocal shifts between
-           falsetto, chest voice, scattered tones, fast declamation, and various rhythmic transitions.
+        except Exception as e:
+            st.error(f"Error drawing Shannon Entropy chart: {e}")
 
-           Techniques such as:
-           • “Western-style falsetto” (47)
-           • “Dispersed tones”
-           • “Fast rhymed chanting” (28)
+        st.write("""
+        The Shannon Entropy value of 1.4821 indicates a moderately high degree of vocal-technique diversity. Guan Yu does not rely solely on either singing or chanting; instead, he shifts fluidly between modes according to dramatic context, demonstrating rich expressive adaptability. The extremely high counts for “白（bái, 2540）— Bai (plain declamation)”, “同白（tóngbái, 218）— Tongbai (aligned declamation)”, and “念（niàn, 108）— Nian (recitative speech)” show that his portrayal is fundamentally rooted in solemn, composed spoken delivery. Through long, rhythmically structured recitative passages, he asserts moral positions, evaluates situations, and projects an aura of authority that commands respect without overt aggression.
 
-           are used in scenes involving:
-           • confrontation,
-           • battle readiness,
-           • moral reasoning,
-           • righteous indignation.
+        Within the singing sections, the various modes of the xipi system dominate absolutely, aligning closely with Guan Yu’s firm, intense, and heroic temperament
 
-           These techniques strengthen his image as a heroic, fierce, yet morally upright general,
-           giving his performances remarkable dramatic power.
-           """)
+        “西皮摇板（xipi yaoban, 82）— flowing xipi variant”  
+        Used in moments of emotional agitation, inner conflict, or movement; ideal for expressing anxiety, anger, or decisive momentum.
+
+        “西皮散板（xipi sanban, 47）— free-tempo xipi”  
+        A rhythmically unbound form conveying instability, restlessness, or heightened emotional turbulence.
+
+        “西皮原板（xipi yuanban）— standard metrical form”  
+        Employed for narrative delivery, argumentative exchanges, or structured confrontation.
+
+        “西皮快板（xipi kuaiban, 28）— fast-meter xipi”  
+        A rapid and intense rhythmic mode for urgency, high spirits, or heroic decisiveness.
+
+        Additional melodic types include:
+
+        “吹腔（chuīqiāng, 52）— Chuqiang”  
+        An ancient northern-style vocal mode with strong breath support and metallic resonance.
+
+        “沽美酒（gūměijiǔ, 10）— Gumeijiu”  
+        A lively tune appearing in drinking, marching, or celebratory scenes.
+
+        “胡十八（húshíbā, 10）— Hu Shiba”  
+        A folk-derived melodic type adding rustic color and supporting actions such as marching or dancing.
+
+        These elements enrich the performative spectacle and strengthen the fusion of Guan Yu’s heroic grandeur with scholarly elegance, producing a role full of dramatic tension and ritualized power.
+
+        At the psychological level, several dimensions become apparent:
+
+        Eternal loyalty — Devotion to his elder brother Liu Bei, to Zhang Fei, and to the two imperial ladies forms the ideological foundation of all his actions.  
+        Inner pride — His frequent self-address as “某”, along with unwavering composure toward Cao Cao, Sun Quan, and other rival powers, reflects deep-rooted honor and confidence.  
+        Heroic courage — High-frequency associations with warhorses, battle imagery, and antagonists such as Cao Cao, combined with forceful singing techniques, construct his image as a warrior capable of “seizing the enemy general’s head amidst ten thousand troops.”
+        """)
 
         st.subheader("3. Personality and Emotional Traits")
         st.write("""
@@ -568,6 +589,30 @@ This study quantitatively analyzes Guan Yu's narrative function from multiple di
         In this way, textual features, emotional structure, and performative conventions interlock,
         turning Guan Yu into a highly stylized yet deeply influential image of the Martial Saint in Peking Opera.
         """)
+
+        # for downloading
+        data_folder = Path("./csv")
+        file_paths = list(data_folder.glob("*.csv")) + list(data_folder.glob("*.xlsx"))
+
+        # 打包成 zip（在内存中完成，不用先写到硬盘）
+        zip_buffer = io.BytesIO()
+        with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zf:
+            for file_path in file_paths:
+                # arcname 只保留文件名，不带完整路径
+                zf.write(file_path, arcname=file_path.name)
+
+        zip_buffer.seek(0)
+        st.markdown("""
+        ### 📄 CSV Summary Download  
+        For detailed data extracted from the scripts, you may download the complete CSV summary below:
+        """)
+        st.download_button(
+            label="⬇️ Download all CSV & XLSX (ZIP)",
+            data=zip_buffer,
+            file_name="guanyu_data_all.zip",
+            mime="application/zip"
+        )
+
 
 
 
