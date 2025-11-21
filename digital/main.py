@@ -6,7 +6,7 @@ import io
 import zipfile
 import matplotlib.pyplot as plt
 from pathlib import Path
-import os
+from openai import OpenAI
 
 
 # Set the page configuration
@@ -14,7 +14,7 @@ st.set_page_config(page_title='My Website', layout='wide')
 
 # Sidebar navigation
 page = st.sidebar.radio('Navigation',
-                        ['🏠 Introduction', '🌱 Analysis', '😊 Interaction', '💖 About Us'],
+                        ['🏠 Introduction', '🌱 Analysis', '💖 About Us'],
                         key='main_nav')
 
 if page == '🏠 Introduction':
@@ -615,73 +615,6 @@ This study quantitatively analyzes Guan Yu's narrative function from multiple di
 
 
 
-
-
-
-elif page == '😊 Interaction':
-    cover_photo_path = "https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/17.png?raw=true"
-    st.image(cover_photo_path, use_column_width=True)
-
-    st.title('😊 Interaction')
-    # st.write('Here you can find information about our team and our history.')
-
-    st.header('''1. "A Poet's Quest" Interactive Game''')
-    st.write('''
-    ⭐🌿 Let's Embark on a Journey Through Poetry, Plants, and Time!
-
-    This is an interactive, educational storytelling experience where you embark on a journey as a poet. The game combines visual elements, audio, and interactive features to create a captivating experience.
-
-    ''')
-
-    # 定义要嵌入的网页链接
-    url = "https://view.genially.com/673c89a7fffb4fdecd627489/interactive-image-a-poets-quest"
-    # 使用HTML的iframe元素嵌入网页
-    iframe_html = f"""
-        <iframe src="{url}" width="100%" height="400" frameborder="0">
-            <p>您的浏览器不支持iframe标签。</p>
-        </iframe>
-        """
-    # 使用st.markdown展示iframe，并设置unsafe_allow_html=True允许HTML代码渲染
-    st.markdown(iframe_html, unsafe_allow_html=True)
-    # 添加一个链接，点击可以直接跳转到网页
-    st.markdown(f"[Click here.]({url})", unsafe_allow_html=True)
-
-    st.subheader("🔍 Navigating the Game")
-    categories_content = {
-        "🚀 To Start": '''After loading, click through the buttons to uncover details, click "Start" button to begin your quest.''',
-        "🎮 Interactive Elements": "Look for clickable icons, buttons, or images throughout the game. These will allow you to:\n  - Uncover interesting facts about the plants\n  - Interact with objects or characters, find the key to advance the storyline\n  - You can revisit previous sections by clicking on the left button on the side of the screen",
-        "🧐 Explore Thoroughly": "Click on all interactive elements to uncover hidden clues and secrets.",
-        "🎁 Find the treasure!": "Complete the quest to find a hidden surpise!"
-    }
-    # 创建展开框显示各类别内容
-    for category, content in categories_content.items():
-        with st.expander(f"{category}"):
-            st.write(content)
-
-    st.header('2. “古人看花” Mini-Programme')
-    st.write('''
-        ✨🌸 Welcome to Our WeChat Mini Program! 
-
-        Discover the wonders of plants like never before! 🌿 Through this mini program, you can explore new plant species 🌼, view plants from the perspective of ancient cultures 📜, and uncover the emotions and historical stories they represent 💕📖. Let's dive into the beauty of nature together! 
-
-        Please scan the QR code below:
-
-        ''')
-    st.image('https://github.com/DMGT-0810/CHC5904/blob/8652118f2b19b34c2c20d5432b9e3be203982b72/digital/image/10.png?raw=true', width=300)
-
-    st.subheader("🔍 User Guide")
-    categories_content = {
-        "📷 Scan the QR Code to Access the Mini Program": "- Use your WeChat app to scan the QR code.\n- Apply for experience permissions if required.",
-        "🌿 Upload or Take a Photo of a Plant": "Once inside the Mini Program, you can either upload an existing photo of a plant or take a new one directly using your device's camera.",
-        "🤖 Plant Identification with AI": "After uploading the image, the program uses Baidu's image recognition API to identify the plant species for you.",
-        "📜 Discover Ancient Plant-Related Poems": "Using OpenAI's GPT-4 model, the program searches the ctext database to find two Chinese ancient poems related to the identified plant.",
-        "🌸 View Results in an Easy-to-Read Format": "The program displays:\n- The plant's name.\n- The full text of the two related ancient poems.\n- The imagery and symbolism of the plant in the poems."
-    }
-    # 创建展开框显示各类别内容
-    for category, content in categories_content.items():
-        with st.expander(f"{category}"):
-            st.write(content)
-
 elif page == '💖 About Us':
     st.title('💖 About Us')
     st.subheader('✨ Team Members')
@@ -690,9 +623,9 @@ elif page == '💖 About Us':
     Shen Ziqi 25054114g
 
     Ye Haoqi 25109545g
-    
+
     LYU Shaowei 25113125g
-     
+
     XIE Jing 25064769g
 
                 ''')
@@ -707,67 +640,75 @@ elif page == '💖 About Us':
     JI Jiaxun 25118287g
             ''')
 
-    st.subheader('🔍 Methodology')
-    st.write('''1.Why we are interested in this research topic on plants, seasons, emotions and locations?
+import streamlit as st
+import os
+from openai import OpenAI
 
-    The Book of Songs and its plant descriptions carry rich cultural connotations, representing the essence of traditional culturje. The botanical descriptions, in thwe Book of Songs contawin abundant cultural information. As carriers of emotion, plants embody the ancient people's sentiments and attitudes toward life. Meanwhile, the geographical features and seasonal climate reflected by these plants are alyso crucial components of their imagery. Analyzing the plants in thme Book of Songs through information visualizationg helps us understand its cultural messages and pass on both the Book of Songs and Chinese. 
-                ''')
-    st.write('''2.How we selected the plants?
+# ---------------- 页面配置 ----------------
+st.set_page_config(
+    page_title="京剧关羽可视化平台",
+    page_icon="🎭",
+    layout="centered",
+    initial_sidebar_state="expanded"
+)
 
-    We used a text analysis tool to count the eight most frequently mentioned plants, which are: mulberry (40 times), millet (26 times), kudzu (21 times), grass (19 times), beans (11 times), pine (11 times), cypress (10 times), and bamboo (7 times).
+# ---------------- 样式美化（只影响回答框） ----------------
+st.markdown("""
+<style>
+.answer-box {
+    background-color: #fff8dc;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #e0c097;
+    font-size: 13px;
+    line-height: 1.4;
+    font-family: "STKaiti", "KaiTi", serif;
+    color: #333333;
+    margin-bottom: 8px;
+}
+</style>
+""", unsafe_allow_html=True)
 
-               ''')
-    st.write('''3.How do we present the content?
+# ---------------- API 配置 ----------------
+os.environ["DEEPSEEK_API_KEY"] = "sk-2bae2305f5a748b9a1f8a641274244f9"
+client = OpenAI(
+    api_key=os.environ.get("DEEPSEEK_API_KEY"),
+    base_url="https://api.deepseek.com"
+)
 
-    We present the georaphical locations of plants through GIS, conduct close reading on seasons, emotional connotations, and human qualities, and we also created an interactive mini-game and a photo-poetry recognition mini-programme to provide users with a diverse experience.
-                   ''')
-
-    st.subheader('🎨 Workflow')
-    # 滑块
-    w = [
-        "Occurrences of plants: \nThe Book of Songs contains 305 poems, among which 153 mention plants. Based on this data, we wrote a python program to create a pie chart for this overall distribution.",
-        "Frequency of top mentioned plants: \nUsing text analysis tools, we identified the eight most frequently mentioned plants in the Book of Songs, which we then selected as our target species for further study. Subsequently, we created a bar chart to visualize this data.",
-        "Emotional themes in selected plants: \nWe analyzed the emotional themes expressed through plants in the Book of Songs and categorized them into major categories and subcategories. This hierarchical structure helps understand the rich emotional palette of the poetry collection.",
-        '''Emotional theme network: \nWe created a network visualization to show the relationships between plants and their associated emotional themes in the Book of Songs. The network consists of main emotional categories (like "Love & Longing", "Diligent Life", "National Spirit") connected to specific plant-emotion pairs.''',
-        "Seasonal distribution: \nThe seasonal distribution of plants in the Book of Songs was analyzed in two complementary ways - a pie chart showing the overall distribution and a stacked bar chart showing the distribution by plant species. ",
-        "Geographical location: \nTo perform GIS, I combined data with conclusions provided by AI to preliminarily determine the geographic locations (latitude and longitude) of the plants.",
+# ---------------- 初始化聊天记录 ----------------
+if "sidebar_messages" not in st.session_state:
+    st.session_state["sidebar_messages"] = [
+        {"role": "system", "content": "你是京剧专家，只回答京剧中关羽相关的问题。"}
     ]
-    # 创建一个滑块
-    index = st.slider(" ", 1, len(w), format="Step %d")
-    st.write(w[index - 1])
+if "last_question" not in st.session_state:
+    st.session_state["last_question"] = ""
 
-    st.subheader('💻 Our Code ')
-    codelink = "https://arcg.is/10COOr2"
-    st.markdown(f'[<{codelink}>]({codelink})', unsafe_allow_html=True)
+# ---------------- 侧边栏问答助手 ----------------
+with st.sidebar:
+    st.markdown("### 🎭 京剧关羽问答助手")
+    question = st.text_input("👇 请输入你想问的问题（关于京剧中的关羽角色）", key="sidebar_input")
 
-    st.subheader('📖 Reference')
-    # 定义链接
-    url1 = "http://eprints.utar.edu.my/3850/1/fyp_CH_2019_TJM_%2D_1606961.pdf"
-    url3 = "https://oversea.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFD&dbname=CJFDLASN2023&filename=MAZH202305010&uniplatform=OVERSEA&v=ylSE49hEQkLdQ_zny4qeAJlaWElvQap7IxdLk7zWRZlr2SeN0Ynobe8yX_fDtfrE"
-    url4 = "https://oversea.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFD&dbname=CJFDLAST2018&filename=YWJS201804015&uniplatform=OVERSEA&v=K9p3VYC-6rsA3W6KSAWAs0jLCWjP-buyn8UaIir4LH-gX8HxCdHCFtTe_jdqwXqm"
-    url5 = "https://oversea.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFD&dbname=CJFDLAST2024&filename=JGWC202443030&uniplatform=OVERSEA&v=Ey6v7oEDe65heEuSYReYV_-3EdAUGFLx6uykHfNpSLMZtITItdwvDdfG7SIooSA2"
-    url6 = "https://oversea.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFD&dbname=CJFDLASN2021&filename=QCSY202114025&uniplatform=OVERSEA&v=_s-ENeE-4H0QCJAmWVPg_1zUTrFs0du_rtqI2DMDzJSeVEeVeKWPGO-vwSWeqB2q"
+    if question and question != st.session_state["last_question"]:
+        st.session_state["sidebar_messages"].append({"role": "user", "content": question})
+        st.session_state["last_question"] = question
+        with st.spinner("正在请关羽大人答复中，请稍候..."):
+            try:
+                response = client.chat.completions.create(
+                    model="deepseek-chat",
+                    messages=st.session_state["sidebar_messages"],
+                    stream=False
+                )
+                answer = response.choices[0].message.content
+                st.session_state["sidebar_messages"].append({"role": "assistant", "content": answer})
+            except Exception as e:
+                st.error(f"请求失败：{e}")
 
-    # showcase
-    st.write(f'[1.《诗经》中“桑”的意向]({url1})')
-    st.write(f'[2. 大河印象——《诗经·国风》里的河流书写与情感建构]({url3})')
-    st.write(f'[3. 刻骨铭心的爱与怨——《诗经·卫风·氓》情感脉络解析]({url4})')
-    st.write(f'[4.《诗经》植物信息可视化应用研究]({url5})')
-    st.write(f'[5.《诗经》中的植物及其意象分析——以《诗经·国风》中的植物为例]({url6})')
-
-    st.subheader('💎Original Text')
-    url3 = "https://ctext.org/book-of-poetry"
-    # 使用HTML的iframe元素嵌入网页
-    iframe_html = f"""
-            <iframe src="{url3}" width="100%" height="400" frameborder="0">
-                <p>您的浏览器不支持iframe标签。</p>
-            </iframe>
-            """
-    # 使用st.markdown展示iframe，并设置unsafe_allow_html=True允许HTML代码渲染
-    st.markdown(iframe_html, unsafe_allow_html=True)
-    # 添加一个链接，点击可以直接跳转到网页
-    st.markdown(f"[Click here.]({url3})", unsafe_allow_html=True)
-
-
+    # 显示历史问答（只加回答框样式）
+    for msg in st.session_state["sidebar_messages"]:
+        if msg["role"] == "user":
+            st.markdown(f"👤 你：{msg['content']}")
+        elif msg["role"] == "assistant":
+            st.markdown(f"<div class='answer-box'>🎤 关羽：{msg['content']}</div>", unsafe_allow_html=True)
 
 
