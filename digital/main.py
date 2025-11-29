@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 from openai import OpenAI
 
+# 统一的 GitHub raw 图片根路径
+BASE_URL = "https://raw.githubusercontent.com/dew447/CHC_DH/main/digital/"
 
 # Set the page configuration
 st.set_page_config(page_title='My Website', layout='wide')
@@ -18,9 +20,11 @@ page = st.sidebar.radio('Navigation',
                         key='main_nav')
 
 if page == '🏠 Introduction':
-    st.image("https://github.com/dew447/CHC_DH/blob/825cf34e341e39e2930d2e022ee92e8744d7129f/digital/image/introduction/Cover1.0.jpg", use_container_width=True)
+    st.image(
+        BASE_URL + "image/introduction/Cover1.0.jpg",
+        use_container_width=True
+    )
     st.title("🎭 Constructing the Image of 关羽 in Peking Opera")
-
 
     st.write('''
     关羽, as a historical figure from the Three Kingdoms period, has long been regarded in Chinese traditional culture as the embodiment of 忠义 (loyalty and righteousness).  
@@ -36,7 +40,6 @@ if page == '🏠 Introduction':
     How is 关羽 in Peking Opera scripts constructed as the archetypal figure of 忠义  
     through the multiple dimensions of linguistic style, character relationships, narrative function, and cultural symbolism?  
     ''')
-
 
     # Research Objectives
     st.header('🎯 Research Objectives')
@@ -116,8 +119,9 @@ if page == '🏠 Introduction':
 elif page == '🎭 Analysis':
 
     st.image(
-        "https://github.com/dew447/CHC_DH/blob/825cf34e341e39e2930d2e022ee92e8744d7129f/digital/image/introduction/Cover1.0.jpg",
-        use_container_width=True)
+        BASE_URL + "image/introduction/Cover1.0.jpg",
+        use_container_width=True
+    )
 
     st.title('🎭 Deep Dives into GuanYu in Peking Opera')
 
@@ -135,7 +139,7 @@ elif page == '🎭 Analysis':
            - Liu Bei (380 times), Zhuge Liang (338 times), and Cao Cao (288 times) rank the top three, highlighting Guan Yu's dual core status in **the core power layer of Shu Han** (Liu Bei is his sworn brother and monarch, Zhuge Liang is his strategic partner) and **the top-tier camp of Cao Wei** (Cao Cao is a powerful enemy who appreciates him). He is a key anchor in the narrative of Shu Han's regime and an important link in the military and political game between Wei and Shu in the Three Kingdoms period.
            - The high-frequency mentions of generals like Zhang Liao and Huang Zhong (both over 70 times) reflect Guan Yu's influence as a “benchmark general” among military colleagues and opponents. His military achievements and decisions are the focus of military narratives from all parties.
            - The mentions of Ma Tong, Zhou Cang, and Guan Ping (relatives/attendants) show the multi-dimensionality of Guan Yu's role—he is not only a battlefield hero but also a leader with family ties and followers. The existence of his personal team strengthens the daily-life support for his image of “unparalleled loyalty”.""")
-        st.image("image/Character/output1.png")
+        st.image(BASE_URL + "image/Character/output1.png")
 
         # 2. Aliases vs Roles Bubble Chart
         st.subheader("Bubble Chart of Guan Yu’s Aliases vs Top 20 Roles")
@@ -144,7 +148,7 @@ elif page == '🎭 Analysis':
              - **Kinship/Core Group Dimension**: The alias “Er Di (Second Brother)” appears frequently in the lines of Liu Bei and Zhuge Liang, reflecting the intimate address within Shu Han’s core circle (sworn brothers and strategic partners) and highlighting Guan Yu’s dual identity as “brother + general” in Shu Han’s power structure. “Yun Chang” and “Guan Mou” are frequently used by characters like Liu Bei and Cao Cao, serving as formal or self-referential addresses among acquaintances or opponents, reflecting Guan Yu’s identity switching in personal relationships and military games.
              - **Honorific Dimension**: The occasional mentions of “Guan Jiangjun (General Guan)” and “Guan Gong” reflect the recognition of his military identity by the Cao Wei and Eastern Wu camps, which are honorific titles based on his military reputation. The use of “Hanshou Tinghou” is associated with his official title, reflecting the importance some characters attach to his political identity.
              - **Cultural Symbol Dimension**: The distribution of different aliases also reflects the diversity of Guan Yu’s image—he is both “Er Di” and “Yun Chang” in Shu Han (a personified brother/general) and a military symbol respected as “Jiangjun” and “Gong” by all parties in the Three Kingdoms context. His alias system is a composite mirror of role relationships and social identities.""")
-        st.image("image/Character/output2.png")
+        st.image(BASE_URL + "image/Character/output2.png")
 
         # 3. Aliases vs Camps Bubble Chart
         st.subheader("Aliases in Different Camps")
@@ -153,7 +157,7 @@ elif page == '🎭 Analysis':
              - **Shu Camp**: The prominent bubbles of “Er Di (Second Brother)” and “Yun Chang” reflect the intimate addresses from core members like Liu Bei and Zhang Fei to Guan Yu, representing the emotional and identity binding in the sworn brotherhood and the core circle of Shu Han, highlighting his dual role as “family member + core general” in Shu Han.
              - **Wei Camp**: The high frequency of formal appellations such as “General Guan” and “Guan Yun Chang” reflects that the Wei camp regards Guan Yu as a military opponent, using official and formal addresses to reflect the recognition of his general identity and the identity definition in the game.
              - **Wu and Other Warlords Camps**: The distribution of appellations like “Guan Gong” and “Hanshou Tinghou” reflects the attention to Guan Yu’s military reputation and political identity, which is the external cognition of his identity as “famous general + feudal lord” under the game pattern of the Three Kingdoms.""")
-        st.image("image/Character/output3.jpg")
+        st.image(BASE_URL + "image/Character/output3.jpg")
 
         # 4. Interaction Network
         st.subheader("Guan Yu Interaction Network Diagram")
@@ -162,7 +166,7 @@ elif page == '🎭 Analysis':
             1. Core Circle: Nodes like Liu Bei, Zhang Fei, and Zhuge Liang have thick edges and prominent nodes with Guan Yu, reflecting the deep binding of the core group of Shu Han. Their intimate interactions as sworn brothers, monarch and minister, and partners form the foundation of Guan Yu’s image of “unparalleled loyalty” and “loyalty to the monarch”.
              2. Military Opponent Circle: Nodes such as Cao Cao, Zhang Liao, and Pang De and their edges with Guan Yu reflect military games, which are key interactions in the military conflict between Wei and Shu in the Three Kingdoms period, highlighting Guan Yu’s core position as a general on the battlefield.
             3. Peripheral Association Circle: Although peripheral nodes like grooms and garrison soldiers have low interaction frequency, they complement the multiple facets of Guan Yu’s life and battlefield as a “person”, showing that he is not only a hero but also in the interaction network of ordinary roles.""")
-        st.image("image/Character/output4.png")
+        st.image(BASE_URL + "image/Character/output4.png")
 
         # 5. Word Clouds of Four Camps
         st.subheader("Word Clouds of Four Camps")
@@ -172,7 +176,7 @@ elif page == '🎭 Analysis':
            - **Wei Camp**: Keywords such as “Yun Chang”, “Guan Gong”, “General”, and “Yan Liang” are significant. “Yun Chang” and “Guan Gong” are honorific titles for his general identity, “Yan Liang” is associated with his classic battle achievement, and “Prime Minister (Cao Cao)” reflects the Wei camp’s attention to military games with him. It shows that the Wei camp regards Guan Yu as a powerful military opponent, and its cognition focuses on his military value and military interaction between Wei and Shu.
            - **Wu Camp**: Keywords such as “Guan Gong”, “Jingzhou”, “Cao Cao”, and “Lu Meng” are prominent. “Jingzhou” is the focus of geopolitical competition, and “Lu Meng” is a key figure in Dong Wu’s game. It reflects that Guan Yu is recognized as “the core opponent in Jingzhou game” in the Wu camp, and his role is associated with Dong Wu’s geopolitical strategy and military checks and balances.
            - **Other Warlords Camp**: Keywords such as “Yun Chang”, “Liu Bei”, “Taoyuan”, and “Hua Xiong” are dominant. “Hua Xiong” is a symbol of his early famous battle, and “Liu Bei” and “Taoyuan” are his identity background. It shows that the cognition of Guan Yu in other warlords camp tends to be “early famous general + Shu Han symbol”, which is a symbolic cognition based on pan-military narrative and identity labels.""")
-        st.image("image/Character/output5.png")
+        st.image(BASE_URL + "image/Character/output5.png")
 
         # 6. Line Chart of Top 10 High-Frequency Words
         st.subheader("Top 10 High-Frequency Words in Four Camps")
@@ -182,7 +186,7 @@ elif page == '🎭 Analysis':
            - **Wei Camp**: High-frequency words such as “Yun Chang”, “Guan Gong”, and “Mei Ran (Beautiful Beard)” dominate, reflecting that the Wei camp regards Guan Yu as a famous military general and opponent. Formal and prestigious addresses highlight his identity as a general, which is a role cognition based on military games.
            - **Wu Camp**: The high-frequency words imply geopolitical conflicts (such as the context related to Jingzhou) and military confrontation logic, reflecting that Dong Wu regards Guan Yu as an external opponent in strategic games, and the role association focuses on geopolitical competition and military checks and balances.
            - **Other Warlords Camp**: The high-frequency words are low in frequency and scattered, reflecting that other warlords have less interaction with Guan Yu, and their cognition of him tends to be a symbolic “general” image. The role association is weak, mostly based on rumors or generalized military symbol cognition.""")
-        st.image("image/Character/output6.png")
+        st.image(BASE_URL + "image/Character/output6.png")
 
         # 7. Guan Yu Mentions Other Generals
         st.subheader("Generals Mentioned in Guan Yu’s Lines (Top 15)")
@@ -191,7 +195,7 @@ elif page == '🎭 Analysis':
           - **Core Strategic Circle of Shu Han**: Zhuge Liang (over 300 times) and Liu Bei (250 times) rank in the top two, reflecting Guan Yu’s dual core attention to Shu Han’s “strategic advisor” and “monarch brother”. It directly embodies his role positioning of “loyalty to the monarch and assistance in governance + brotherly coordination”, reflecting his interactive logic of coordinating strategic decisions with military actions and supporting political stability with brotherly friendship in the Shu Han regime.
           - **Core Military Opponents in Game**: The high-frequency mentions of Cao Cao (over 130 times) and Zhang Liao (50 times) highlight Guan Yu’s military attention to the top-tier camp of Cao Wei (leader + key general) as a general. It is a microcosm of the “general vs. general, general vs. lord” game pattern in the military conflict between Wei and Shu, embodying the focal association of his general identity in military confrontation.
           - **Personal Force and Subordinate Circle**: The mentions of Ma Tong, Guan Ping, Zhou Cang, etc., show Guan Yu’s management and dependence on his personal team as a general, which is an extension of his “battlefield leader” identity in daily life, reflecting his command and trust relationship with subordinates in military operations.""")
-        st.image("image/Character/output7.png")
+        st.image(BASE_URL + "image/Character/output7.png")
 
         # 8. Guan Yu’s Words to Liu Bei, Zhang Fei, Zhuge Liang
         st.subheader("High-Frequency Words in Guan Yu’s Lines to Liu Bei, Zhang Fei, Zhuge Liang")
@@ -201,10 +205,11 @@ elif page == '🎭 Analysis':
           - **Wei Camp**: High-frequency words such as “Yun Chang”, “Guan Gong”, “Lao Fu (Old Man)”, and “Cheng Xiang (Prime Minister)” are significant. “Yun Chang” and “Guan Gong” are honorific titles for his general identity, reflecting the Wei camp’s recognition of his military value; the high-frequency mention of “Cheng Xiang (Cao Cao)” reflects that the Wei camp regards Guan Yu as a core military opponent, with cognition focusing on the confrontation in the military game between Wei and Shu.
           - **Wu Camp**: High-frequency words such as “Guan Gong”, “Jingzhou”, “Cao Cao”, and “Zhu Gong (Lord)” are prominent. “Jingzhou” is the focus of geopolitical competition between Wu and Shu, and the mention of “Guan Gong” is deeply bound to the Jingzhou game, reflecting that Dong Wu regards Guan Yu as a key opponent in geopolitical strategy, whose role is associated with Dong Wu’s political ambition and military checks and balances.
           - **Other Warlords Camp**: High-frequency words such as “Liu Bei”, “Zu Fu (Grandfather)”, and “Guan Yun Chang” are low in frequency and scattered. “Liu Bei” and “Zu Fu” reflect the other warlords’ cognition of Guan Yu’s background as “Shu Han general + family identity”; “Guan Yun Chang” is a generalized general symbol, indicating that the other warlords’ cognition of Guan Yu tends to be an early famous general label, with less interaction and symbolic characteristics.""")
-        st.image("image/Character/output8.png")
+        st.image(BASE_URL + "image/Character/output8.png")
+
     elif Analysis_page == 'Cultural symbols and images':
         st.header('Cultural symbols and images')
-        symbol_cover_photo_path = "./image/1.PNG"
+        symbol_cover_photo_path = BASE_URL + "image/1.PNG"
         st.image(symbol_cover_photo_path, width=500)
 
         st.subheader(
@@ -330,9 +335,9 @@ Among them, "Huarong Daoyi explained Cao Cao", "Riding a Thousand Miles Alone" a
 ② "Riding alone for thousands of miles": highlighting his loyalty and bravery, and laying the dual position of his moral model and military leader;
 ③ "Defeating Maicheng": It marks the end of Guan Yu's tragic fate, sublimates the theme of "loyalty and righteousness" and arouses readers' emotional resonance.
         ''')
-        st.image("Guanyu_anaylize/3_guanyu_event_types.png")
-        st.image("Guanyu_anaylize/4_guanyu_plot_driving_trend.png")
-        st.image("Guanyu_anaylize/5_guanyu_character_network.png")
+        st.image(BASE_URL + "Guanyu_anaylize/3_guanyu_event_types.png")
+        st.image(BASE_URL + "Guanyu_anaylize/4_guanyu_plot_driving_trend.png")
+        st.image(BASE_URL + "Guanyu_anaylize/5_guanyu_character_network.png")
 
         st.subheader("2. Dynamic Evolution of Functions")
         st.write('''
@@ -358,7 +363,7 @@ Main opponent:
 ③ Lv Meng: Guan Yu's key opponent, who ultimately led to his downfall, made a surprise attack on Jingzhou through "crossing the river in white". It is the concentrated explosion point of the contradiction between Dongwu and Liubei Group.
 ④ Zhou Yu: Battle of Red Cliffs's main rival before and after laid the groundwork for the subsequent Jingzhou dispute.
         ''')
-        st.image("Guanyu_anaylize/12_guanyu_narrative_heatmap.png")
+        st.image(BASE_URL + "Guanyu_anaylize/12_guanyu_narrative_heatmap.png")
 
         # Fourth, the chart analysis summary
         st.header("Fourth, Chart Analysis Summary")
@@ -370,11 +375,11 @@ This study quantitatively analyzes Guan Yu's narrative function from multiple di
 4. Histogram of Guan Yu's function orientation: Military leaders (130 times) appear most frequently, followed by protectors (100 times), moral models (95 times), conflict promoters (85 times) and key decision makers (75 times).
 5. Analysis of the intensity of interaction network between Guan Yu and the main characters: Liu Bei (95 points), Zhang Fei (90 points) and Cao Cao (85 points) are the top three, which confirms the core node of Guan Yu's social network and reflects its pivotal role in connecting different camps.
         ''')
-        st.image("Guanyu_anaylize/7_guanyu_play_frequency.png")
-        st.image("Guanyu_anaylize/8_guanyu_behavior_distribution.png")
-        st.image("Guanyu_anaylize/9_guanyu_character_radar.png")
-        st.image("Guanyu_anaylize/10_guanyu_function_analysis.png")
-        st.image("Guanyu_anaylize/11_guanyu_character_interactions.png")
+        st.image(BASE_URL + "Guanyu_anaylize/7_guanyu_play_frequency.png")
+        st.image(BASE_URL + "Guanyu_anaylize/8_guanyu_behavior_distribution.png")
+        st.image(BASE_URL + "Guanyu_anaylize/9_guanyu_character_radar.png")
+        st.image(BASE_URL + "Guanyu_anaylize/10_guanyu_function_analysis.png")
+        st.image(BASE_URL + "Guanyu_anaylize/11_guanyu_character_interactions.png")
 
         # Fifth, the comprehensive evaluation of Guan Yu's narrative function
         st.header("Fifth, Comprehensive Evaluation of Guan Yu's Narrative Function")
@@ -386,7 +391,7 @@ This study quantitatively analyzes Guan Yu's narrative function from multiple di
 ④ Role relationship hub: Its social network covers the main forces of the three countries, and promotes the intertwined development of multiple plots through interaction.
 ⑤ Emotional resonance point: The fate track from peak to tragedy stimulates readers' value recognition and enhances the artistic appeal of the works.
         ''')
-        st.image("Guanyu_anaylize/12_guanyu_narrative_heatmap.png")
+        st.image(BASE_URL + "Guanyu_anaylize/12_guanyu_narrative_heatmap.png")
 
         st.subheader("2. Uniqueness of Narrative Function")
         st.write('''
@@ -395,9 +400,9 @@ This study quantitatively analyzes Guan Yu's narrative function from multiple di
 ③ Persistence of influence: Its key decisions can have a far-reaching impact across the story stage. For example, Huarong's release of Cao Cao and the Northern Expedition of Fancheng not only affect the current plot, but also have a far-reaching impact on the plots in subsequent stages.
 ④ Emotional depth: The versatility of personality and emotional complexity make the role more realistic and infectious.
         ''')
-        st.image("Guanyu_anaylize/13_guanyu_driving_types_statistics 2.png")
-        st.image("Guanyu_anaylize/14_guanyu_driving_types_statistics.png")
-        st.image("Guanyu_anaylize/6_guanyu_narrative_efficiency.png")
+        st.image(BASE_URL + "Guanyu_anaylize/13_guanyu_driving_types_statistics 2.png")
+        st.image(BASE_URL + "Guanyu_anaylize/14_guanyu_driving_types_statistics.png")
+        st.image(BASE_URL + "Guanyu_anaylize/6_guanyu_narrative_efficiency.png")
 
         # Sixth, Research conclusions
         st.header("Sixth, Research Conclusions")
@@ -424,8 +429,8 @@ This study quantitatively analyzes Guan Yu's narrative function from multiple di
             and a solemn personality core. His emotional tendencies reflect his hierarchical status and moral position.
             """)
         st.header(" 1. High-Frequency Vocabulary")
-        st.image("image/Scripts/1.png")
-        st.image("image/Scripts/2.png")
+        st.image(BASE_URL + "image/Scripts/1.png")
+        st.image(BASE_URL + "image/Scripts/2.png")
         st.write("""
             Among all terms used by Guan Yu, 255 high-frequency words are identified. Many reveal his irreplaceable emotional and social position.
 
@@ -461,7 +466,7 @@ This study quantitatively analyzes Guan Yu's narrative function from multiple di
             """)
 
         st.subheader("2. Variety in Vocal Techniques")
-        st.image("image/Scripts/6.png")
+        st.image(BASE_URL + "image/Scripts/6.png")
         st.write("""
         Across the scripts analyzed, Guan Yu constructs his authoritative presence through extensive use of solemn spoken passages, while his core singing lines employ powerful, soaring, and emotionally charged techniques. The “西皮摇板（xipi yaoban, 82 occurrences）— Xipi Yaoban”, characterized by a bright and vigorous melodic flow with flexible rhythmic movement, vividly conveys his surging inner passion. The use of “吹腔（chuīqiāng, 52 occurrences）— Chuqiang”, a resonant, breath-driven vocal mode with an archaic and elegant color, further enhances the refined, ritualized dignity associated with his identity as both a “Martial Saint” and a “scholarly general.” These vocal traits reinforce that he is not a reckless brute, but a disciplined commander who balances strength with propriety.
         """)
@@ -546,8 +551,8 @@ This study quantitatively analyzes Guan Yu's narrative function from multiple di
           """)
 
         st.subheader("4. Emotional Structure Based on a Classical Chinese Sentiment Lexicon")
-        st.image("image/Scripts/5.png")
-        st.image("image/Scripts/3.png")
+        st.image(BASE_URL + "image/Scripts/5.png")
+        st.image(BASE_URL + "image/Scripts/3.png")
         st.write("""
         Using a custom Classical Chinese sentiment lexicon, all of Guan Yu’s lines are annotated and scored.
         The results reveal a clear three-layer emotional structure:
@@ -565,7 +570,7 @@ This study quantitatively analyzes Guan Yu's narrative function from multiple di
         """)
 
         st.subheader("4. Cross-Script Consistency: A Shared Archetype of Lord Guan")
-        st.image("image/Scripts/4.png")
+        st.image(BASE_URL + "image/Scripts/4.png")
         st.write("""
         When we compare different plays such as “Meeting at the Single Blade”, “Huarong Trail”, “Beheading Hua Xiong”,
         “Meeting at the Ancient City”, and “Battle of Changsha”, we find that:
