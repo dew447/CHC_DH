@@ -25,7 +25,6 @@ if page == '🏠 Introduction':
         use_container_width=True
     )
     st.title("🎭 Constructing the Image of 关羽 in Peking Opera")
-
     st.write('''
     关羽, as a historical figure from the Three Kingdoms period, has long been regarded in Chinese traditional culture as the embodiment of 忠义 (loyalty and righteousness).  
     He is not only remembered as a heroic character in historical narratives but has also been continuously reshaped and reproduced in folk beliefs, literary works, and the operatic stage.  
