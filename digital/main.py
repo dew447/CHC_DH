@@ -305,7 +305,7 @@ elif page == '🎭 Analysis':
 * Key decision-makers: At many critical moments, Guan Yu's decisions have a great impact on the plot, such as "Huarong Daoyi explained Cao Cao" and other plots.
 * Conflict promoter: Guan Yu's personality and behavior often trigger or solve conflicts in the play and push the story forward.
         ''')
-        st.image("Guanyu_anaylize/1_guanyu_character_development.png")
+        st.image(BASE_URL + "Guanyu_anaylize/1_guanyu_character_development.png")
 
         st.subheader("2. Personality Characteristics")
         st.write('''
@@ -315,7 +315,7 @@ elif page == '🎭 Analysis':
 * Calm: At critical moments, Guan Yu often shows calmness and composure, and can make wise judgments.
 * Arrogance: This is a negative feature of Guan Yu's personality, and it has also become one of the important reasons for his final defeat in Maicheng.
         ''')
-        st.image("Guanyu_anaylize/2_guanyu_multi_dimension_analysis.png")
+        st.image(BASE_URL + "Guanyu_anaylize/2_guanyu_multi_dimension_analysis.png")
 
         # Second, the multidimensional analysis of narrative function
         st.header("Second, Multidimensional Analysis of Narrative Function")
