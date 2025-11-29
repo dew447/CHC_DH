@@ -14,7 +14,7 @@ st.set_page_config(page_title='My Website', layout='wide')
 
 # Sidebar navigation
 page = st.sidebar.radio('Navigation',
-                        ['🏠 Introduction', '🌱 Analysis', '💖 About Us'],
+                        ['🏠 Introduction', '🎭 Analysis', '💖 About Us'],
                         key='main_nav')
 
 if page == '🏠 Introduction':
@@ -113,11 +113,11 @@ if page == '🏠 Introduction':
     ''')
 
 
-elif page == '🌱 Analysis':
+elif page == '🎭 Analysis':
 
     st.image("image/introduction/Cover1.0.jpg", use_container_width=True)
 
-    st.title('🌱 Deep Dives into GuanYu in Peking Opera')
+    st.title('🎭 Deep Dives into GuanYu in Peking Opera')
 
     # Sub-navigation for the "Analysis " page
     Analysis_page = st.sidebar.radio('Analysis Sections',
