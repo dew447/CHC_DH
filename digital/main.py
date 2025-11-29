@@ -208,7 +208,7 @@ elif page == '🎭 Analysis':
 
     elif Analysis_page == 'Cultural symbols and images':
         st.header('Cultural symbols and images')
-        symbol_cover_photo_path = BASE_URL + "image/1.PNG"
+        symbol_cover_photo_path = BASE_URL + "image/Character/1.png"
         st.image(symbol_cover_photo_path, width=500)
 
         st.subheader(
