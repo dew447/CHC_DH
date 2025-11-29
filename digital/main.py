@@ -18,7 +18,7 @@ page = st.sidebar.radio('Navigation',
                         key='main_nav')
 
 if page == '🏠 Introduction':
-    st.image("image/introduction/Cover1.0.jpg", use_container_width=True) 
+    st.image("https://github.com/dew447/CHC_DH/blob/825cf34e341e39e2930d2e022ee92e8744d7129f/digital/image/introduction/Cover1.0.jpg", use_container_width=True)
     st.title("🎭 Constructing the Image of 关羽 in Peking Opera")
 
 
@@ -115,7 +115,9 @@ if page == '🏠 Introduction':
 
 elif page == '🎭 Analysis':
 
-    st.image("image/introduction/Cover1.0.jpg", use_container_width=True)
+    st.image(
+        "https://github.com/dew447/CHC_DH/blob/825cf34e341e39e2930d2e022ee92e8744d7129f/digital/image/introduction/Cover1.0.jpg",
+        use_container_width=True)
 
     st.title('🎭 Deep Dives into GuanYu in Peking Opera')
 
